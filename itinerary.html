@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Itinerary — SEA Trip</title>
+<style>body{margin:0;font-family:-apple-system,sans-serif;background:#0f172a;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
+#gate{display:none;flex-direction:column;gap:12px;align-items:center;padding:30px;text-align:center}
+input{font-size:17px;padding:12px 16px;border-radius:10px;border:none;width:230px;text-align:center}
+button{font-size:16px;font-weight:700;padding:12px 26px;border-radius:10px;border:none;background:#0ea5e9;color:#fff}
+#st{font-size:13px;opacity:.8;min-height:18px} .e{font-size:46px}</style></head>
+<body><div id="gate"><div class="e">📋</div><div style="font-size:19px;font-weight:700">Itinerary</div>
+<div style="font-size:13px;opacity:.75">Enter the trip passphrase (remembered on this phone)</div>
+<input id="pw" type="password" placeholder="passphrase" autocomplete="current-password"><button id="go">Unlock</button><div id="st"></div></div>
+<div id="st" hidden></div>
+<script src="unlock.js"></script><script>openDoc('itinerary');</script></body></html>
