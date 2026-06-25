@@ -3,369 +3,252 @@
 <head>
 <meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Packing"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEA Trip — Packing (Have · Still need · Process)</title>
+<title>SEA Trip — Packing Checklist</title>
 <style>
-  :root{--cloth:#2563eb;--tech:#6366f1;--med:#dc2626;--toil:#0d9488;--sun:#f59e0b;--doc:#7c3aed;--util:#64748b;--ink:#1f2937;--have:#16a34a;--need:#dc2626}
+  :root{--ink:#1f2937;--mut:#64748b;--line:#e5e7eb;--buy:#b45309;--buybg:#fffbeb;--done:#16a34a;--blue:#1d4ed8}
   *{box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f1f5f9;color:var(--ink);line-height:1.5;padding-bottom:60px}
-  header{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:24px 20px;position:sticky;top:0;z-index:5}
-  header h1{margin:0 0 4px;font-size:20px}
-  header p{margin:0;opacity:.85;font-size:12.5px}
-  nav{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
-  nav a{background:rgba(255,255,255,.15);color:#fff;text-decoration:none;padding:5px 11px;border-radius:20px;font-size:12px;font-weight:600}
-  nav a:hover{background:rgba(255,255,255,.3)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-  h2.sec{font-size:18px;margin:26px 0 4px;padding-top:10px}
-  .sub{color:#64748b;font-size:13px;margin:0 0 12px}
-  .rule{background:#fff;border-radius:12px;padding:13px 17px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:13.5px}
-  .rule a{color:#1d4ed8;font-weight:700;text-decoration:none}
-  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-  .lg{display:flex;align-items:center;gap:6px;font-size:11.5px;background:#fff;padding:4px 9px;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
-  .lg .dot{width:10px;height:10px;border-radius:50%}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:820px){.cols{grid-template-columns:1fr}}
-  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:16px}
-  .card-h{padding:11px 16px;font-weight:700;font-size:13.5px;color:#fff;display:flex;align-items:center;gap:8px}
-  .grp{border-bottom:1px solid #eef2f7;padding:9px 16px}
-  .grp:last-child{border-bottom:0}
-  .grp-t{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#64748b;margin:0 0 5px}
-  .it{font-size:12.5px;padding:3px 0;display:flex;gap:7px;align-items:baseline}
-  .it .nm{font-weight:600}
-  .it .meta{color:#64748b;font-weight:400}
-  .it .pr{color:#0f172a;font-weight:700;white-space:nowrap;margin-left:auto;font-size:12px}
-  .it a{color:#1d4ed8;text-decoration:none;font-weight:600}
-  .it a:hover{text-decoration:underline}
-  .it .tick{color:var(--have);flex:none}
-  .it .box{color:var(--need);flex:none}
-  .flag{background:#fffbeb;border-left:3px solid #f59e0b;padding:5px 10px;margin:6px 0 2px;font-size:11.5px;color:#92400e;border-radius:0 6px 6px 0}
-  .crit{background:#fef2f2;border-left:3px solid #dc2626;padding:7px 11px;margin:8px 0;font-size:12px;color:#991b1b;border-radius:0 6px 6px 0}
-  .arrival{background:#ecfeff;border:1.5px solid #a5f3fc;border-radius:12px;padding:11px 16px;font-size:12.5px;margin:14px 0}
-  .zone{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:16px}
-  .zone-h{padding:13px 17px;color:#fff;font-weight:700}
-  .zone-h small{display:block;font-weight:500;opacity:.9;font-size:11px;margin-top:2px}
-  .carry .zone-h{background:linear-gradient(135deg,#7c3aed,#a21caf)}
-  .check .zone-h{background:linear-gradient(135deg,#0f766e,#0e7490)}
-  .worn .zone-h{background:linear-gradient(135deg,#475569,#334155)}
-  .bag{border-bottom:1px solid #eef2f7;padding:10px 16px}
-  .bag:last-child{border-bottom:0}
-  .bag-t{font-weight:700;font-size:13px;display:flex;align-items:center;gap:7px}
-  .bag-t .dot{width:10px;height:10px;border-radius:50%;flex:none}
-  .bag-c{font-size:12px;color:#475569;margin:4px 0 0 17px}
-  .bag-c ul{margin:2px 0;padding-left:16px}
-  .bag-c li{margin:1px 0}
-  .medkit{background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;margin:6px 16px 12px;padding:9px 12px}
-  .medkit h4{margin:0 0 5px;color:var(--med);font-size:12px}
-  .medrow{font-size:11.5px;padding:3px 0;border-top:1px dashed #fecaca}
-  .medrow:first-of-type{border-top:0}
-  .medrow b{color:#991b1b}
-  .panel{background:#fff;border-radius:14px;padding:16px 18px;margin:14px 0;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-  .order{counter-reset:step;list-style:none;padding:0;margin:0}
-  .order li{counter-increment:step;position:relative;padding:8px 0 8px 36px;font-size:13px;border-top:1px solid #f1f5f9}
-  .order li:first-child{border-top:0}
-  .order li::before{content:counter(step);position:absolute;left:0;top:7px;width:24px;height:24px;background:#1e3a8a;color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
-  .xsec{display:flex;flex-direction:column;gap:3px;margin-top:8px;border:2px solid #cbd5e1;border-radius:10px;overflow:hidden}
-  .lay{padding:8px 12px;font-size:12px;color:#fff;display:flex;justify-content:space-between}
-  .lay small{opacity:.9;font-weight:500}
-  .pill{font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:20px;margin-left:6px;vertical-align:middle}
-  .own{background:#dcfce7;color:#166534}.buy{background:#fee2e2;color:#991b1b}.there{background:#cffafe;color:#155e75}
-  .foot{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f1f5f9;color:var(--ink);line-height:1.45;padding-bottom:80px}
+  header{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:10}
+  header h1{margin:0;font-size:19px}
+  .prog{margin-top:8px;font-size:12.5px;opacity:.92}
+  .bar{height:7px;background:rgba(255,255,255,.22);border-radius:20px;margin-top:6px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:#34d399;border-radius:20px;transition:width .25s}
+  .wrap{max-width:760px;margin:0 auto;padding:0 12px}
+  .card{background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin:14px 0;overflow:hidden}
+  .ch{padding:11px 15px;font-weight:700;font-size:14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .ch .n{font-size:11.5px;color:var(--mut);font-weight:600}
+  .item{display:flex;align-items:flex-start;gap:11px;padding:10px 15px;border-bottom:1px solid #f1f5f9;cursor:pointer;user-select:none}
+  .item:last-child{border-bottom:0}
+  .item input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:6px;margin:0;position:relative;top:1px}
+  .item input:checked{background:var(--done);border-color:var(--done)}
+  .item input:checked::after{content:"✓";color:#fff;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
+  .item .t{font-size:14px}
+  .item input:checked ~ .t{color:#9aa6b2;text-decoration:line-through}
+  .item .meta{color:var(--mut);font-size:12px}
+  .buy .ch{background:var(--buybg);color:var(--buy)}
+  .buy .item .meta{color:var(--buy)}
+  .note{background:#eff6ff;border-left:3px solid var(--blue);margin:12px 0;padding:9px 13px;font-size:12.5px;color:#1e3a8a;border-radius:0 8px 8px 0}
+  .addrow{display:flex;gap:8px;padding:11px 15px}
+  .addrow input[type=text]{flex:1;font-size:15px;padding:9px 12px;border:1.5px solid var(--line);border-radius:9px}
+  .addrow button{font-size:14px;font-weight:700;padding:9px 16px;border:none;border-radius:9px;background:var(--blue);color:#fff}
+  .del{margin-left:auto;color:#cbd5e1;font-size:18px;line-height:1;padding:0 4px}
+  .del:hover{color:#ef4444}
+  .tools{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--mut);padding:4px 4px 0}
+  .tools button{background:none;border:1px solid var(--line);border-radius:7px;color:var(--mut);font-size:11.5px;padding:4px 10px}
+  .foot{text-align:center;font-size:11px;color:#94a3b8;margin:20px 0}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <h1>🎒 SEA Trip — Packing</h1>
-    <p>Osprey Farpoint 55 (40L checked + 15L daypack carry-on) · 29 days · 4 Jul – 2 Aug 2026</p>
-    <nav><a href="#have">1 · What I have</a><a href="#need">2 · Still to buy</a><a href="#process">3 · Packing process</a><a href="#reference">4 · Reference</a></nav>
+    <h1>🧳 SEA Trip — Packing Checklist</h1>
+    <div class="prog"><span id="cnt">0 / 0 packed</span><div class="bar"><i id="barfill"></i></div></div>
   </div>
 </header>
 <div class="wrap">
 
-  <div class="rule">💰 <b>Bought ~AUD 4,868</b> · 🛒 <b>Essentials all bought ✅</b> · Optional: Kobo e-reader (~$378). &nbsp;+ <b>AUD 1,500 Wise spending money</b>. Live running total → <a href="sea_trip_2026_17.html#costs">itinerary Cost Tracker</a>.</div>
+  <div class="tools"><span>Tick as you pack — saves on this phone.</span><button onclick="resetTicks()">Reset ticks</button></div>
 
-  <div class="flag">✅ <b>Everything's bought — packing's done.</b> &nbsp;E-reader ✅ · anxiety/flight med ✅. Just last-minute bits (sun cap · Band-Aids · exfoliating cloth) + FMP tee/sarong on arrival. <b>Off injections now</b> — Wegovy/Frio/needles kit removed. Dropped earlier: Peak Design wallet · Bellroy toiletry kit · lock · permethrin · head net.</div>
+  <div class="note">🔑 In your <b>carry-on daypack</b>: meds · electronics · power bank · passport · 1 spare outfit. Everything else → checked 40L.</div>
 
-  <!-- ============ SECTION 1 — HAVE ============ -->
-  <h2 class="sec" id="have">1 · What I already have ✅</h2>
-  <p class="sub">Bought &amp; email-confirmed (incl. the big 5 Jun Amazon order), plus things you already owned.</p>
-
-  <div class="cols">
-    <div>
-      <div class="card">
-        <div class="card-h" style="background:linear-gradient(135deg,#15803d,#16a34a)">🎒 Bags &amp; organisation</div>
-        <div class="grp">
-          <div class="it"><span class="tick">✅</span><span class="nm">Osprey Farpoint 55</span><span class="meta">· 40L + 15L daypack</span><span class="pr">$339</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Eagle Creek Reveal cubes</span><span class="meta">· XS/S/M + Compression M</span><span class="pr">$158</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Matador Laundry Bag 30L</span><span class="pr">$44</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">S2S Ultra-Sil Dry Bag 8L</span><span class="pr">$30</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Travel shoe bags</span><span class="meta">· TPU mesh (replaced Matador FlatPak)</span><span class="pr">$17</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">ProCase clear pouch 2-pack</span><span class="meta">· med cube + tablets/liquids</span><span class="pr">$18</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Hydro Flask 32oz Trail</span><span class="meta">· + straw cap</span><span class="pr">$105</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Zip ties 200-pack</span><span class="meta">· utility / tamper ties</span><span class="pr">$13</span></div>
-        </div>
-        <div class="flag">⚠️ Swap the leaky Hydro Flask straw cap for a standard leakproof lid before you go.</div>
-      </div>
-
-      <div class="card">
-        <div class="card-h" style="background:linear-gradient(135deg,#0d9488,#14b8a6)">🧴 Toiletries · sun · laundry</div>
-        <div class="grp">
-          <div class="it"><span class="tick">✅</span><span class="nm">LRP Anthelios UVMUNE 400 ×2</span><span class="meta">· face SPF50+ (the upgrade)</span><span class="pr">$43</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Sun Bum Moisturising SPF50+ 473ml</span><span class="meta">· BODY · reef-friendly big bottle</span><span class="pr">$50</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Cetaphil Gentle Skin Cleanser 118ml</span><span class="meta">· face (travel size)</span><span class="pr">$7</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Wild Mini Deodorant 16g</span><span class="meta">· travel size</span><span class="pr">$8</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Blistex Sun Ultra</span><span class="meta">· lip SPF</span><span class="pr">$26</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Body Glide</span><span class="meta">· anti-chafe</span><span class="pr">$28</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Soak Minisoak (Scentless)</span><span class="meta">· no-rinse merino wash</span><span class="pr">$39</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Eco detergent sheets</span><span class="meta">· 32-wash, enzyme-free (synthetics)</span><span class="pr">$21</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Citric acid 100g</span><span class="meta">· de-stink soak</span><span class="pr">$21</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">S2S Clothesline + sink plug</span><span class="pr">$36</span></div>
-          <div class="it"><span class="own" style="font-size:11px;padding:0">OWN</span><span class="nm" style="font-weight:400;color:#475569">Pharmacy bits · CeraVe · Hylo-Forte · DripDrop · toothbrush/floss/razor · hand sani</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-h" style="background:linear-gradient(135deg,#dc2626,#ef4444)">💊 Medical · safety · light</div>
-        <div class="grp">
-          <div class="it"><span class="tick">✅</span><span class="nm">Protect Picaridin 20% spray ×2</span><span class="meta">· 100ml ea · skin repellent (dengue)</span><span class="pr">$32</span></div>
-          <div class="it" style="opacity:.45"><span class="tick">✅</span><span class="nm" style="text-decoration:line-through">Frio cooling wallet</span><span class="meta">· no longer needed — off injections</span><span class="pr">$49</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">AMK Ultralight/Watertight .7 first-aid kit</span><span class="meta">· waterproof · boat/jungle</span><span class="pr">$63</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Nitecore NU25 headlamp</span><span class="meta">· Khao Sok / night safari</span><span class="pr">$71</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Pelican Marine phone pouch (2-pk)</span><span class="meta">· boat/FMP</span><span class="pr">$52</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">S2S Ultra-Sil Nano Poncho</span><span class="meta">· rain</span><span class="pr">$96</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-h" style="background:linear-gradient(135deg,#4f46e5,#6366f1)">🔌 Tech &amp; 🛂 docs</div>
-        <div class="grp">
-          <div class="it"><span class="tick">✅</span><span class="nm">Epicka TA-105 Pro 70W adapter</span><span class="meta">· = laptop charger</span><span class="pr">$100</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Nitecore NB10000 power bank</span><span class="pr">$100</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Bellroy Card Pocket (Charcoal)</span><span class="meta">· daily wallet</span><span class="pr">$95</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Oakley EVZero + MRY lenses</span><span class="meta">· sunglasses</span><span class="pr">$354</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">MacBook Air · AirPods · AirTags ×2 · USB-C cables ×3</span><span class="meta">· 1 laptop cable + 2 general USB-C cords (Mac charges off the Epicka)</span><span class="pr">OWN</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="card">
-        <div class="card-h" style="background:linear-gradient(135deg,#1d4ed8,#2563eb)">👕 Clothing</div>
-        <div class="grp">
-          <div class="grp-t">Tops — 8 tees (size L)</div>
-          <div class="it"><span class="tick">✅</span><span class="nm">2× Mons Royale Icon merino</span><span class="meta">· Black + Sage</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Icebreaker 150 Tech Lite</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Vuori Strato Tech</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Patagonia Capilene Cool Daily</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">3× lululemon Metal Vent</span><span class="meta">· workout</span><span class="pr">$757</span></div>
-        </div>
-        <div class="grp">
-          <div class="grp-t">Bottoms &amp; layers</div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Outlier Injex Highdart pants</span><span class="meta">· 32</span><span class="pr">$534</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Patagonia Baggies Longs 7"</span><span class="meta">· L · primary swim + casual</span><span class="pr">$100</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Vuori Kore Short 7"</span><span class="meta">· Charcoal L · town/casual — NOT swim</span><span class="pr">$125</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Patagonia R1 Air Pullover</span><span class="meta">· Black L</span><span class="pr">$220</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Luca Faloni Portofino linen shirt</span><span class="meta">· 41 · dinner</span><span class="pr">$365</span></div>
-        </div>
-        <div class="grp">
-          <div class="grp-t">Underwear · socks · feet</div>
-          <div class="it"><span class="tick">✅</span><span class="nm">3× Icebreaker Anatomica boxers</span><span class="meta">· XL · daily merino</span><span class="pr">$170</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">2× SAXX DropTemp boxers</span><span class="meta">· XL · beach/boat/FMP</span><span class="pr">$129</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">2× Injinji Trail toe socks</span><span class="meta">· Macpac · jungle/hike</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">3× RunDNA running socks</span><span class="meta">· gym/spin</span><span class="pr">$189</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Chaco Z/Cloud sandals</span><span class="meta">· US10</span><span class="pr">$171</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Clean leather shoes</span><span class="meta">· nice nights — ATLAS / CÉ LA VI / dinners</span><span class="pr">OWN</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">Parapack P-CAP Lite packable cap</span><span class="meta">· Safari · sun</span><span class="pr">$63</span></div>
-          <div class="it"><span class="own" style="font-size:11px;padding:0">also OWN</span><span class="nm" style="font-weight:400;color:#475569">AS Colour boardshorts (backup swim) · rash vest (UPF) · Birkenstocks/runners</span></div>
-        </div>
-        <div class="flag">5 pairs underwear (3 merino + 2 Saxx). Optional 6th = Saxx Quest for jungle durability — skip unless you want it.</div>
-        <div class="flag">👟 <b>Nice-night shoes ✅ sorted</b> — packing your clean leather shoes for ATLAS / CÉ LA VI / dinners (those venues enforce smart-casual: no open shoes or sporty trainers, so these are what passes). Sandals + Salomons stay for daytime/casual.</div>
-      </div>
-    </div>
+  <!-- BUY FIRST -->
+  <div class="card buy">
+    <div class="ch">🛒 Still to buy <span class="n">do this week</span></div>
+    <label class="item"><input type="checkbox"><span class="t">Sun cap — Fractel M-Premium <span class="meta">UPF50, L/XL, ~$59 · order so it lands before 4 Jul</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Nose/ear trimmer <span class="meta">to take</span></span></label>
   </div>
 
-  <!-- ============ SECTION 2 — NEED ============ -->
-  <h2 class="sec" id="need">2 · What I still need to buy 🛒</h2>
-  <p class="sub"><b>Essentials all done ✅</b> — only the <b>optional Kobo e-reader (~$378)</b> left if you want it. Just the FMP tee + sarong to grab on arrival in SEA.</p>
-
-  <div class="cols">
-
-    <div>
-
-      <div class="card">
-        <div class="card-h" style="background:#475569">📖 Optional</div>
-        <div class="grp">
-          <div class="it"><span class="tick">✅</span><span class="nm">Kobo e-reader — ✅ got</span><span class="meta">· load books before you go · lives in the daypack day-access pocket</span><span class="pr">$378</span></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="card-h" style="background:#b45309">🩹 Last-minute bits + reminders</div>
-        <div class="grp">
-          <div class="it"><span class="box">☐</span><span class="nm">Band-Aids + blister plasters</span><span class="meta">· assorted strips + a couple of Compeed for new-shoe / trekking blisters</span></div>
-          <div class="it"><span class="box">☐</span><span class="nm">Body-wash exfoliating cloth</span><span class="meta">· Salux / African net scrubbing cloth</span></div>
-          <div class="it"><span class="box">☐</span><span class="nm">🏷️ AirTag in the checked bag</span><span class="meta">· drop it in on pack-day + check the battery; a 2nd in the daypack if you have one</span></div>
-          <div class="it"><span class="tick">✅</span><span class="nm">💊 Anxiety/flight med — ✅ got</span><span class="meta">· ⚠️ <b>add it to the meds doctor's-letter</b> + keep in the <b>original labelled box</b> — carry your script + doctor's letter (strict customs)</span></div>
-          <div class="it"><span class="box">☐</span><span class="nm">🖨️ Print paper backups</span><span class="meta">· eVOA visa (••••••) + arrival cards (once submitted, ~days before) + key booking confirmations — a printed set in the daypack in case your phone dies at a border</span></div>
-          <div class="it"><span class="box">☐</span><span class="nm">🧢 Sun cap — replaces the refunded Parapack</span><span class="meta">· pick: <a href="https://wearefractel.com" target="_blank">Fractel M-Premium</a> (UPF50+, AeroLITE), neutral sand/straw, L/XL, ~$59, AU 1–3 day express · ⚠️ sunscreen ears/neck (cap = face only) · alt if you want ear/neck cover built-in: OR Sun Runner (~$60) · 🔴 <b>order this week</b></span></div>
-        </div>
-      </div>
-    </div>
+  <!-- BAGS -->
+  <div class="card">
+    <div class="ch">🎒 Bags &amp; organisation</div>
+    <label class="item"><input type="checkbox"><span class="t">Osprey Farpoint 55 <span class="meta">40L checked + 15L daypack</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Eagle Creek Reveal cubes <span class="meta">XS/S/M + Compression M</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Matador Laundry Bag 30L</span></label>
+    <label class="item"><input type="checkbox"><span class="t">S2S Ultra-Sil Dry Bag 8L <span class="meta">swim/wash vessel</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Travel shoe bags</span></label>
+    <label class="item"><input type="checkbox"><span class="t">ProCase clear pouches ×2 <span class="meta">med + liquids</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Hydro Flask 32oz <span class="meta">⚠️ swap to leakproof lid</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Zip ties</span></label>
   </div>
 
-  <div class="arrival">🛒 <b>Buy on arrival in SEA:</b> <b>FMP white tee</b> + closed-toe shoes + UV/neon paint (Koh Phangan) · sarong (~$5) · local cooling face wipes (Biore/Gatsby) if wanted.</div>
-
-  <!-- ============ SECTION 3 — PROCESS ============ -->
-  <h2 class="sec" id="process">3 · Packing process — where everything goes</h2>
-  <p class="sub">Every item lives inside a named bag/pouch — nothing loose. <span class="pill own">HAVE</span> · <span class="pill buy">TO BUY</span> · <span class="pill there">SEA</span> on arrival</p>
-
-  <div class="rule"><b>🔑 Golden rule:</b> can't-lose / can't-overheat → <b style="color:#7c3aed">daypack (carry-on)</b>: meds, electronics, power bank, passport, 1 spare outfit. Everything else → <b style="color:#0e7490">main 40L (checked)</b>: clothing, liquids, toiletries, shoes.</div>
-
-  <div class="legend">
-    <span class="lg"><span class="dot" style="background:var(--cloth)"></span>Clothing</span>
-    <span class="lg"><span class="dot" style="background:var(--tech)"></span>Tech</span>
-    <span class="lg"><span class="dot" style="background:var(--med)"></span>Medical</span>
-    <span class="lg"><span class="dot" style="background:var(--toil)"></span>Toiletries</span>
-    <span class="lg"><span class="dot" style="background:var(--sun)"></span>Sun/water</span>
-    <span class="lg"><span class="dot" style="background:var(--doc)"></span>Docs/valuables</span>
-    <span class="lg"><span class="dot" style="background:var(--util)"></span>Utility bags</span>
+  <!-- TOPS -->
+  <div class="card">
+    <div class="ch">👕 Tops <span class="n">8 tees (L)</span></div>
+    <label class="item"><input type="checkbox"><span class="t">2× Mons Royale Icon merino <span class="meta">Black + Sage</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Icebreaker 150 Tech Lite</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Vuori Strato Tech</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Patagonia Capilene Cool Daily</span></label>
+    <label class="item"><input type="checkbox"><span class="t">3× lululemon Metal Vent <span class="meta">workout</span></span></label>
   </div>
 
-  <div class="zone worn">
-    <div class="zone-h">🧍 WORN / ON-BODY (travel day) <small>Not packed — saves space + weight on the budget flights</small></div>
-    <div class="bag"><div class="bag-c" style="margin-left:0">Birkenstocks (or runners) · a tee + Outlier pants · cap · sunglasses · Bellroy Card Pocket in front pocket · passport + cash in daypack top pocket</div></div>
+  <!-- BOTTOMS -->
+  <div class="card">
+    <div class="ch">👖 Bottoms &amp; layers</div>
+    <label class="item"><input type="checkbox"><span class="t">Outlier pants</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Patagonia Baggies Longs 7" <span class="meta">primary swim + casual</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Vuori Kore Short 7" <span class="meta">town/casual</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">AS Colour boardshorts <span class="meta">backup swim</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Rash vest <span class="meta">UPF sun layer</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Patagonia R1 Air Pullover <span class="meta">Black L — wear flying</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Luca Faloni linen shirt <span class="meta">nice dinners</span></span></label>
   </div>
 
-  <div class="cols">
-    <div>
-      <div class="zone carry">
-        <div class="zone-h">🟣 DAYPACK · 15L · CARRY-ON</div>
+  <!-- UNDIES / SHOES -->
+  <div class="card">
+    <div class="ch">🩲 Underwear · socks · shoes</div>
+    <label class="item"><input type="checkbox"><span class="t">3× Icebreaker Anatomica boxers</span></label>
+    <label class="item"><input type="checkbox"><span class="t">2× SAXX DropTemp boxers <span class="meta">beach/boat/FMP</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">2× Injinji toe socks <span class="meta">jungle/hike</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">3× RunDNA socks <span class="meta">gym/spin</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Chaco Z/Cloud sandals</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Clean leather shoes <span class="meta">ATLAS / CÉ LA VI / dinners</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Salomons / runners <span class="meta">daytime + flying</span></span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--tech)"></span>Laptop sleeve <span class="pill own">HAVE</span></div>
-          <div class="bag-c">MacBook Air</div></div>
+  <!-- TOILETRIES / GROOMING -->
+  <div class="card">
+    <div class="ch">🧴 Toiletries · grooming</div>
+    <label class="item"><input type="checkbox"><span class="t">Cetaphil cleanser <span class="meta">+ full-size for body</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">CeraVe night cream</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Wild deo <span class="meta">+ Dove deo</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Toothbrush · paste tablets · floss</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Razor + cream · clippers</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Tweezers</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Nail scissors</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Nose/ear trimmer <span class="meta">(buying)</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Vaseline</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Body Glide <span class="meta">anti-chafe</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Body-wash exfoliating cloth <span class="meta">Salux</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Hylo-Forte eye drops · DripDrop</span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--tech)"></span>Tech pouch <span class="pill own">HAVE</span></div>
-          <div class="bag-c"><ul><li>Epicka 70W adapter — does it all: plug adapter + laptop + phone + AirPods</li><li><b>Laptop USB-C charging cable</b> (100W-rated) + <b>2× USB-C cords</b> (phone · power bank · spare) — + a Lightning cable if your phone/AirPods need it</li><li>Nitecore NB10000 power bank</li><li>AirPods</li></ul></div></div>
+  <!-- SUN / LAUNDRY -->
+  <div class="card">
+    <div class="ch">☀️ Sun · laundry</div>
+    <label class="item"><input type="checkbox"><span class="t">LRP Anthelios UVMUNE 400 ×2 <span class="meta">face SPF50+</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Sun Bum SPF50+ 473ml <span class="meta">body, reef-safe</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Blistex Sun Ultra <span class="meta">lip SPF</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Soak Minisoak <span class="meta">merino wash</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Eco detergent sheets · citric acid</span></label>
+    <label class="item"><input type="checkbox"><span class="t">S2S clothesline + sink plug</span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--doc)"></span>Passport &amp; travel docs <span class="pill own">ziplock/pocket</span></div>
-          <div class="bag-c">Passport · backup card · cash (AUD + USD) · boarding passes · spare photo — <em>comes out at borders only</em></div></div>
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--doc)"></span>Bellroy Card Pocket <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Wise · ING · daily cash — <em>front pocket</em></div></div>
+  <!-- MEDS -->
+  <div class="card">
+    <div class="ch">💊 Meds &amp; first-aid <span class="n">carry-on</span></div>
+    <label class="item"><input type="checkbox"><span class="t">Prescription meds: a prescription med · a prescription med <span class="meta">+ doctor's letters</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Anxiety/flight med — anxiety/flight med <span class="meta">original box + script (strict customs)</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Travel kit: a prescription med · loperamide · ondansetron · cetirizine</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Panadol / Nurofen</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Hydrocortisone cream</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Clotrimazole/terbinafine · povidone-iodine</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Band-Aids + blister plasters (Compeed)</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Picaridin 20% repellent ×2 <span class="meta">dengue</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">AMK Ultralight first-aid kit</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Hand sanitiser</span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--med)"></span>🧰 MED CUBE — ProCase pouch #1 <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Whole medical kit pulls out as one piece. Inside:</div></div>
-        <div class="medkit">
-          <div class="medrow"><b>Tablets (ProCase pouch #2)</b> → personal prescription meds (private — full list in your Dropbox copy) · <b>doctor's letters</b></div>
-          <div class="medrow"><b>💊 anxiety/flight med</b> → original labelled box + script/doctor's-letter (strict customs — carry script)</div>
-          <div class="medrow"><b>AMK Ultralight/Watertight .7</b> → wound first-aid</div>
-          <div class="medrow"><b>Hand hygiene</b> → mini hand sanitiser <span class="pill own">OWN</span></div>
-        </div>
+  <!-- TECH -->
+  <div class="card">
+    <div class="ch">🔌 Tech &amp; chargers</div>
+    <label class="item"><input type="checkbox"><span class="t">Epicka 70W adapter <span class="meta">plug + laptop + phone + AirPods, all-in-one</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Laptop USB-C cable + 2× USB-C cords <span class="meta">+ Lightning if needed</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Nitecore NB10000 power bank</span></label>
+    <label class="item"><input type="checkbox"><span class="t">MacBook Air</span></label>
+    <label class="item"><input type="checkbox"><span class="t">AirPods</span></label>
+    <label class="item"><input type="checkbox"><span class="t">AirTags ×2 <span class="meta">1 in checked, 1 in daypack</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Kobo e-reader</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Oakley sunglasses</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Nitecore headlamp <span class="meta">Khao Sok</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Pelican waterproof phone pouch <span class="meta">boat/FMP</span></span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--sun)"></span>Day-access pocket <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Pelican phone pouch · Kobo · Blistex lip SPF · Dude Wipes · hand sani + tissues · DripDrop sachets · Hylo-Forte · small day sunscreen · small cleanser + travel deo</div></div>
+  <!-- DOCS -->
+  <div class="card">
+    <div class="ch">🛂 Documents <span class="n">carry-on</span></div>
+    <label class="item"><input type="checkbox"><span class="t">Passport <span class="meta">valid 6+ mths past 3 Aug</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Bellroy Card Pocket <span class="meta">Wise · ING · cash</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Backup card + cash (AUD + USD)</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Printed eVOA visa + arrival cards</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Doctor's letters · travel insurance</span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--cloth)"></span>Spare outfit <span class="pill own">HAVE</span></div>
-          <div class="bag-c">1 tee + underwear + day shorts (bag-delay insurance)</div></div>
-      </div>
-    </div>
+  <!-- BEFORE FLY -->
+  <div class="card">
+    <div class="ch">📲 Before you fly</div>
+    <label class="item"><input type="checkbox"><span class="t">Apps: Grab · Gojek · 12Go · MyICA · XE · offline maps</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Cash: Wise loaded ✓ · small THB/IDR notes</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Print visa + arrival cards</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Weigh both bags <span class="meta">10kg carry-on / 20kg checked</span></span></label>
+  </div>
 
-    <div>
-      <div class="zone check">
-        <div class="zone-h">🟢 MAIN PACK · 40L · CHECKED</div>
+  <!-- BUY ON ARRIVAL -->
+  <div class="card buy">
+    <div class="ch">🛒 Buy on arrival in SEA</div>
+    <label class="item"><input type="checkbox"><span class="t">FMP white tee + closed shoes + UV paint <span class="meta">Koh Phangan</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Sarong (~$5) · body wash + shampoo</span></label>
+  </div>
 
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--toil)"></span>Toiletry bag <span class="pill own">use one you own</span></div>
-          <div class="bag-c">Full-size cleanser (face + chest) · Dove deo · toothbrush + paste tablets · floss · razor + cream · clippers · CeraVe night cream <em>(no decanting — buy body wash + shampoo local)</em></div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--sun)"></span>Liquids / leak pouch (ProCase quart) <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Sun Bum body SPF50+ 473ml · LRP UVMUNE 400 ×2 (face) · Protect Picaridin 20% spray ×2 — <em>double-bagged (hold pressure)</em></div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--cloth)"></span>Reveal Cubes XS/S/M <span class="pill own">HAVE</span></div>
-          <div class="bag-c">8 tees · 5 underwear · socks · 2 day shorts (Baggies + Kore) · Outlier pants · Faloni shirt</div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--cloth)"></span>Compression Cube M <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Patagonia R1 Air · FMP white tee · AS Colour boardshorts · rash vest (UPF50 sun layer)</div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--util)"></span>Travel shoe bag <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Chaco sandals (+ runners if not worn; + FMP shoes later)</div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--sun)"></span>S2S Dry Bag 8L <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Swimwear (Baggies = primary, AS Colour boardshorts = backup); doubles as the wash vessel</div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--util)"></span>Handwash kit pouch <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Soak Minisoak (merino) · detergent sheets (synthetics) · citric acid (de-stink) · S2S clothesline · sink plug — <em>wash in the dry bag, rinse in the shower</em></div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--util)"></span>Matador Laundry Bag 30L <span class="pill own">HAVE</span></div>
-          <div class="bag-c">Packs flat; fills with dirty clothes</div></div>
-
-        <div class="bag"><div class="bag-t"><span class="dot" style="background:var(--util)"></span>Top / first-grab <span class="pill own">mixed</span></div>
-          <div class="bag-c">S2S DryLite towel · Nano poncho · Body Glide · TP roll · DripDrop box · <span class="pill there">SEA</span> sarong</div></div>
-      </div>
+  <!-- CUSTOM -->
+  <div class="card">
+    <div class="ch">➕ Remembered later <span class="n">add your own</span></div>
+    <div id="custom-list"></div>
+    <div class="addrow">
+      <input type="text" id="newitem" placeholder="Type something you remembered…" autocomplete="off">
+      <button onclick="addItem()">Add</button>
     </div>
   </div>
 
-  <div class="panel" style="border:1.5px solid #f59e0b">
-    <h3 style="margin:0 0 8px">📏 Will it all fit? — 40L checked + 15L daypack</h3>
-    <p style="font-size:12.5px;margin:0 0 8px"><b>Yes, but the checked 40L is tight.</b> Weight is comfortable (~12–14kg vs the 20kg limit) — <b>volume</b> is the constraint. To make it sit easily:</p>
-    <ul style="font-size:12.5px;margin:0;padding-left:18px;line-height:1.7">
-      <li><b>Buy body wash + shampoo locally</b> — don't carry full bottles. Biggest space-saver.</li>
-      <li><b>Wear your bulkiest items flying</b> — Chaco/runners + the R1 Air on the plane.</li>
-      <li><b>Compression cube</b> for the R1 Air + spare layers.</li>
-      <li><b>Daypack soaks up overflow</b> — Farpoint is 55L total if needed.</li>
-    </ul>
-  </div>
-
-  <div class="panel">
-    <h3 style="margin:0 0 8px">📐 Main-pack cross-section (back → front)</h3>
-    <div class="xsec">
-      <div class="lay" style="background:#0f766e">🪨 Against your back, lowest <small>toiletry kit + liquids pouch (heavy, dense)</small></div>
-      <div class="lay" style="background:#0891b2">👕 Core volume <small>clothing cubes + compression cube</small></div>
-      <div class="lay" style="background:#3b82f6">👟 Base corners <small>shoe bag + dry bag</small></div>
-      <div class="lay" style="background:#64748b">🧺 Top / front <small>towel · poncho · sarong · flat laundry bag — grab-first</small></div>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h3 style="margin:0 0 8px">✅ Pack-day order of operations</h3>
-    <ol class="order">
-      <li><b>~48h before:</b> permethrin-treat the Outlier pants, socks &amp; cap outdoors; let them dry fully.</li>
-      <li><b>Toiletries:</b> full-size bottles into the Bellroy kit — no decanting. Sunscreens + repellent into the ProCase liquids pouch, double-bagged.</li>
-      <li><b>Cube the clothes:</b> tees + underwear + socks + shorts in the Reveal cubes; R1 Air in the compression cube.</li>
-      <li><b>Build the DAYPACK first:</b> med cube, tech pouch, passport/docs pouch, 1 spare outfit, day-access pocket. ✅ <b>power bank + all meds here, NOT checked.</b></li>
-      <li><b>Build the MAIN pack:</b> toiletry kit + liquids low against the back → clothing cubes core → shoe bag + dry bag base corners → soft items pad gaps → towel/poncho/sarong on top.</li>
-      <li><b>AirTags:</b> one in the main pack, one in the daypack.</li>
-      <li><b>Departure morning:</b> doctor's letters + anxiety/flight med (original labelled box) into the med pouch.</li>
-      <li><b>Weigh both bags</b> (Jetstar 7kg / Scoot 10kg carry-on + 20kg checked).</li>
-      <li><b>Final scan:</b> passport · wallet · phone · meds · chargers · glasses · keys.</li>
-    </ol>
-  </div>
-
-  <!-- ============ SECTION 4 — REFERENCE ============ -->
-  <h2 class="sec" id="reference">4 · Reference</h2>
-  <div class="panel">
-    <h3 style="margin:0 0 8px">🧳 Baggage allowances</h3>
-    <p style="font-size:12.5px;margin:0">Jetstar (out) 7kg carry-on + 25kg checked · Scoot (home — TR649/TR58) 10kg carry-on + 20kg checked → <b>keep the main bag under 20kg.</b> Weigh both bags before you fly.</p>
-  </div>
-  <div class="panel">
-    <h3 style="margin:0 0 8px">📄 Documents — where they go</h3>
-    <div class="it"><b>🛂 Passport &amp; travel docs (daypack ziplock)</b> <span class="meta">· passport (valid 6+ mths past 3 Aug 2026) · backup card · cash (AUD ~$200 + US$200–300) · spare photo · boarding passes</span></div>
-    <div class="it"><b>💳 Bellroy Card Pocket (front pocket)</b> <span class="meta">· Wise (primary) · ING · daily cash · hotel safe on beach days</span></div>
-    <div class="it"><b>📱 Digital (phone)</b> <span class="meta">· eVOA •••••• · Cover-More cert •••••• · flight itineraries</span></div>
-    <div class="it"><b>💊 Med cube</b> <span class="meta">· doctor's letters (meds) · in original labelled box</span></div>
-    <p style="font-size:11.5px;color:#155e75;margin:8px 0 0">🤿 No PADI card needed — Discover Scuba at Sail Rock. ⚠️ Scoot home: USM check-in closes 17:45 for the 19:45 TR649.</p>
-  </div>
-  <div class="panel">
-    <h3 style="margin:0 0 8px">🌿 Khao Sok jungle-wear</h3>
-    <p style="font-size:12px;color:#475569;margin:0 0 8px">Leeches there are <b>harmless</b> (no disease, painless) — mainly after rain + on night treks (July = wetter). <b>No dedicated hiking pants needed.</b></p>
-    <div class="it"><b>☀️ Daytime trek</b> <span class="meta">· shorts + Chaco; picaridin on legs + ankles</span></div>
-    <div class="it"><b>🌙 Night safari</b> <span class="meta">· cover up — Outliers (permethrin) + runners + high socks tucked in</span></div>
-    <div class="it"><b>🛡️ Max leech defence</b> <span class="meta">· long pants + socks tucked + closed shoes + local leech socks</span></div>
-  </div>
-  <div class="panel">
-    <h3 style="margin:0 0 8px">⛔ Leave at home</h3>
-    <p style="font-size:12.5px;margin:0">Nice watch + jewellery · full-size cosmetics/aerosols · heavy denim · "just-in-case" outfits (laundry ~$4–5/load everywhere) · cash above ~$200.</p>
-  </div>
-
-  <div class="foot">Reconciled against Gmail 5 Jun 2026 · costs in the itinerary's 💰 Cost Tracker → sea_trip_2026_17.html</div>
+  <div class="foot">Ticks + your added items save on this device only.</div>
 </div>
+
+<script>
+(function(){
+  const KEY='sea_pack_ticks_v1', CKEY='sea_pack_custom_v1';
+  const ticks=JSON.parse(localStorage.getItem(KEY)||'{}');
+  const custom=JSON.parse(localStorage.getItem(CKEY)||'[]');
+  function saveT(){localStorage.setItem(KEY,JSON.stringify(ticks))}
+  function saveC(){localStorage.setItem(CKEY,JSON.stringify(custom))}
+  function slug(el){return el.closest('.item').querySelector('.t').textContent.trim().slice(0,80)}
+
+  function bindFixed(){
+    document.querySelectorAll('.card:not(.custom) .item input').forEach(cb=>{
+      const k=slug(cb);
+      if(ticks[k]) cb.checked=true;
+      cb.addEventListener('change',()=>{ticks[k]=cb.checked; if(!cb.checked)delete ticks[k]; saveT(); prog();});
+    });
+  }
+  function renderCustom(){
+    const box=document.getElementById('custom-list'); box.innerHTML='';
+    custom.forEach((it,idx)=>{
+      const row=document.createElement('label'); row.className='item';
+      row.innerHTML='<input type="checkbox"><span class="t"></span><span class="del">×</span>';
+      const cb=row.querySelector('input'), t=row.querySelector('.t'), del=row.querySelector('.del');
+      t.textContent=it.t; cb.checked=!!it.d;
+      cb.addEventListener('change',()=>{custom[idx].d=cb.checked; saveC(); prog();});
+      del.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();custom.splice(idx,1);saveC();renderCustom();prog();});
+      box.appendChild(row);
+    });
+  }
+  window.addItem=function(){
+    const inp=document.getElementById('newitem'); const v=inp.value.trim();
+    if(!v)return; custom.push({t:v,d:false}); saveC(); inp.value=''; renderCustom(); prog();
+  };
+  document.getElementById('newitem').addEventListener('keydown',e=>{if(e.key==='Enter')window.addItem();});
+  window.resetTicks=function(){
+    if(!confirm('Uncheck everything? (kept items stay)'))return;
+    for(const k in ticks)delete ticks[k]; saveT();
+    custom.forEach(c=>c.d=false); saveC();
+    document.querySelectorAll('.item input').forEach(cb=>cb.checked=false); prog();
+  };
+  window.prog=function(){
+    const all=document.querySelectorAll('.item input');
+    const done=[...all].filter(cb=>cb.checked).length;
+    document.getElementById('cnt').textContent=done+' / '+all.length+' packed';
+    document.getElementById('barfill').style.width=(all.length?Math.round(done/all.length*100):0)+'%';
+  };
+  bindFixed(); renderCustom(); prog();
+})();
+</script>
 </body>
 </html>
