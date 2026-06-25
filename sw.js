@@ -1,5 +1,5 @@
 
-const V = 'sea-v2';
+const V = 'sea-v3';
 const PRECACHE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "itinerary.html", "packing.html", "guide.html", "cards.html"];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(V).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -10,9 +10,9 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (url.origin === location.origin) {
-    e.respondWith(caches.match(e.request, {ignoreSearch:true}).then(r => r || fetch(e.request).then(resp => {
+    e.respondWith(fetch(e.request).then(resp => {
       const copy = resp.clone(); caches.open(V).then(c => c.put(e.request, copy)); return resp;
-    })));
+    }).catch(() => caches.match(e.request, {ignoreSearch:true})));
   } else {
     e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(resp => {
       if (resp.ok || resp.type === 'opaque') { const copy = resp.clone(); caches.open(V).then(c => c.put(e.request, copy)); }
