@@ -17,7 +17,7 @@
   .card{background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin:14px 0;overflow:hidden}
   .ch{padding:12px 15px;font-weight:700;font-size:15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
   .ch .n{font-size:11.5px;color:var(--mut);font-weight:600}
-  .sub{padding:9px 15px 3px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);background:#fafbfc;border-bottom:1px solid #f1f5f9}
+  .sub{padding:9px 15px 3px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#475569;background:#fafbfc;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:6px}
   .item{display:flex;align-items:flex-start;gap:11px;padding:10px 15px;border-bottom:1px solid #f1f5f9;cursor:pointer;user-select:none}
   .item:last-child{border-bottom:0}
   .item input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:6px;margin:0;position:relative;top:1px}
@@ -51,13 +51,13 @@
 </header>
 <div class="wrap">
 
-  <div class="tools"><span>Organised by bag · tick as you pack (saves on this phone).</span><button onclick="resetTicks()">Reset ticks</button></div>
+  <div class="tools"><span>By bag → by cube/pouch · tick as you pack (saves on this phone).</span><button onclick="resetTicks()">Reset ticks</button></div>
 
   <!-- BUY FIRST -->
   <div class="card buy">
     <div class="ch">🛒 Still to buy <span class="n">do this week</span></div>
     <label class="item"><input type="checkbox"><span class="t">Sun cap — Fractel M-Premium <span class="meta">UPF50, L/XL, ~$59 · order so it lands before 4 Jul</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">Nose/ear trimmer <span class="meta">→ goes in checked bag</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Nose/ear trimmer <span class="meta">→ toiletry bag (checked)</span></span></label>
   </div>
 
   <!-- WORN -->
@@ -73,16 +73,17 @@
   <div class="card carry">
     <div class="ch">🎒 Carry-on daypack <span class="n">15L · can't-lose / can't-overheat</span></div>
     <div class="warn">⚠️ No sharps (tweezers, scissors, trimmer) and no liquids over 100ml in here — those go checked.</div>
-    <div class="sub">Tech</div>
-    <label class="item"><input type="checkbox"><span class="t">Epicka 70W adapter <span class="meta">plug + laptop + phone + AirPods all-in-one</span></span></label>
+
+    <div class="sub">💻 Laptop sleeve</div>
+    <label class="item"><input type="checkbox"><span class="t">MacBook Air</span></label>
+
+    <div class="sub">🔌 Tech pouch</div>
+    <label class="item"><input type="checkbox"><span class="t">Epicka 70W adapter</span></label>
     <label class="item"><input type="checkbox"><span class="t">Laptop USB-C cable + 2× USB-C cords <span class="meta">+ Lightning if needed</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Nitecore NB10000 power bank <span class="meta">must be carry-on</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">MacBook Air</span></label>
     <label class="item"><input type="checkbox"><span class="t">AirPods</span></label>
-    <label class="item"><input type="checkbox"><span class="t">Kobo e-reader</span></label>
-    <label class="item"><input type="checkbox"><span class="t">Pelican waterproof phone pouch</span></label>
-    <label class="item"><input type="checkbox"><span class="t">AirTag <span class="meta">1 of 2 (other in checked)</span></span></label>
-    <div class="sub">Meds — keep accessible</div>
+
+    <div class="sub">💊 Med cube (ProCase pouch #1)</div>
     <label class="item"><input type="checkbox"><span class="t">Prescription meds: a prescription med · a prescription med <span class="meta">+ doctor's letters</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Anxiety/flight med — anxiety/flight med <span class="meta">original box + script</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Travel kit: a prescription med · loperamide · ondansetron · cetirizine <span class="meta">cetirizine = antihistamine</span></span></label>
@@ -90,54 +91,69 @@
     <label class="item"><input type="checkbox"><span class="t">Hydrocortisone cream</span></label>
     <label class="item"><input type="checkbox"><span class="t">Band-Aids + blister plasters (Compeed)</span></label>
     <label class="item"><input type="checkbox"><span class="t">Hand sanitiser</span></label>
-    <div class="sub">Documents</div>
+
+    <div class="sub">🛂 Docs pouch (ziplock)</div>
     <label class="item"><input type="checkbox"><span class="t">Passport <span class="meta">valid 6+ mths past 3 Aug</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">Bellroy Card Pocket <span class="meta">Wise · ING · cash</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Backup card + cash (AUD + USD)</span></label>
     <label class="item"><input type="checkbox"><span class="t">Printed eVOA visa + arrival cards</span></label>
     <label class="item"><input type="checkbox"><span class="t">Travel insurance details</span></label>
-    <div class="sub">Day-access pocket</div>
+
+    <div class="sub">💳 Bellroy Card Pocket (front pocket)</div>
+    <label class="item"><input type="checkbox"><span class="t">Wise · ING · daily cash</span></label>
+
+    <div class="sub">☀️ Day-access pocket</div>
+    <label class="item"><input type="checkbox"><span class="t">Pelican waterproof phone pouch</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Kobo e-reader</span></label>
     <label class="item"><input type="checkbox"><span class="t">Blistex lip SPF</span></label>
     <label class="item"><input type="checkbox"><span class="t">Hylo-Forte eye drops · DripDrop</span></label>
     <label class="item"><input type="checkbox"><span class="t">Small sunscreen + cleanser + travel deo</span></label>
-    <div class="sub">Spare outfit (bag-delay insurance)</div>
+    <label class="item"><input type="checkbox"><span class="t">AirTag <span class="meta">1 of 2</span></span></label>
+
+    <div class="sub">👕 Spare outfit (bag-delay insurance)</div>
     <label class="item"><input type="checkbox"><span class="t">1 tee + underwear + day shorts</span></label>
   </div>
 
   <!-- CHECKED -->
   <div class="card check">
     <div class="ch">🟢 Checked main pack <span class="n">40L</span></div>
-    <div class="sub">Clothing</div>
+
+    <div class="sub">🟦 Reveal cubes (XS/S/M) — clothes</div>
     <label class="item"><input type="checkbox"><span class="t">Tees: 2× Mons Royale · Icebreaker · Vuori Strato · Patagonia Capilene · 3× lululemon</span></label>
-    <label class="item"><input type="checkbox"><span class="t">Patagonia Baggies Longs 7" <span class="meta">primary swim</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">Vuori Kore Short · AS Colour boardshorts · rash vest</span></label>
-    <label class="item"><input type="checkbox"><span class="t">Patagonia R1 Air pullover</span></label>
-    <label class="item"><input type="checkbox"><span class="t">Luca Faloni linen shirt <span class="meta">nice dinners</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">3× Icebreaker boxers · 2× SAXX boxers</span></label>
     <label class="item"><input type="checkbox"><span class="t">2× Injinji socks · 3× RunDNA socks</span></label>
-    <div class="sub">Shoes (not worn)</div>
-    <label class="item"><input type="checkbox"><span class="t">Clean leather shoes <span class="meta">ATLAS / CÉ LA VI / dinners</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">Birkenstocks <span class="meta">day · casual · beach</span></span></label>
-    <div class="warn">👟 3 pairs, clear lanes: Birks (day/beach) · leather (nice nights) · Salomons worn flying (exercise + treks). No 4th pair, no sweaty daywear.</div>
-    <div class="sub">Toiletries / grooming</div>
+    <label class="item"><input type="checkbox"><span class="t">Outlier pants · Patagonia Baggies · Vuori Kore short · AS Colour boardshorts · rash vest</span></label>
+    <label class="item"><input type="checkbox"><span class="t">Luca Faloni linen shirt <span class="meta">nice dinners</span></span></label>
+
+    <div class="sub">🟪 Compression cube M</div>
+    <label class="item"><input type="checkbox"><span class="t">Patagonia R1 Air pullover <span class="meta">(+ FMP tee once bought)</span></span></label>
+
+    <div class="sub">🧴 Toiletry bag</div>
     <label class="item"><input type="checkbox"><span class="t">Cetaphil cleanser · CeraVe night cream</span></label>
     <label class="item"><input type="checkbox"><span class="t">Dove + Wild deo · toothbrush · paste tablets · floss</span></label>
     <label class="item"><input type="checkbox"><span class="t">Razor + cream · clippers</span></label>
     <label class="item"><input type="checkbox"><span class="t">Tweezers · nail scissors · nose trimmer <span class="meta">sharps — checked only</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Vaseline · Body Glide · exfoliating cloth</span></label>
-    <div class="sub">Sun + liquids (over 100ml → checked)</div>
+
+    <div class="sub">💧 Liquids pouch (ProCase quart) — over 100ml</div>
     <label class="item"><input type="checkbox"><span class="t">LRP Anthelios UVMUNE 400 ×2 <span class="meta">face SPF50+</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Sun Bum SPF50+ 473ml <span class="meta">body, reef-safe</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Picaridin 20% repellent ×2 <span class="meta">dengue</span></span></label>
-    <div class="sub">Laundry kit</div>
+
+    <div class="sub">👟 Shoe bag</div>
+    <label class="item"><input type="checkbox"><span class="t">Clean leather shoes <span class="meta">ATLAS / CÉ LA VI / dinners</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Birkenstocks <span class="meta">day · casual · beach</span></span></label>
+    <div class="warn">👟 3 pairs: Birks (day/beach) · leather (nice nights) · Salomons worn flying (exercise + treks).</div>
+
+    <div class="sub">🧺 Handwash kit pouch</div>
     <label class="item"><input type="checkbox"><span class="t">Soak Minisoak · detergent sheets · citric acid</span></label>
     <label class="item"><input type="checkbox"><span class="t">S2S clothesline + sink plug</span></label>
-    <div class="sub">Bags · misc</div>
-    <label class="item"><input type="checkbox"><span class="t">Eagle Creek cubes + compression cube</span></label>
-    <label class="item"><input type="checkbox"><span class="t">S2S dry bag 8L · shoe bag · Matador laundry bag</span></label>
+
+    <div class="sub">🎒 Dry bag · laundry bag · loose</div>
+    <label class="item"><input type="checkbox"><span class="t">S2S dry bag 8L <span class="meta">wet swimwear / wash vessel</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Matador laundry bag 30L <span class="meta">packs flat</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Hydro Flask <span class="meta">empty through security</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Nitecore headlamp <span class="meta">Khao Sok</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">AMK first-aid kit <span class="meta">checked (has scissors)</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">AMK first-aid kit <span class="meta">has scissors → checked</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">AirTag <span class="meta">2 of 2</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Zip ties</span></label>
     <label class="item"><input type="checkbox"><span class="t">Personal items</span></label>
