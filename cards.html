@@ -1,16 +1,103 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>Arrival Cards — SEA Trip</title>
-<style>body{margin:0;font-family:-apple-system,sans-serif;background:#0f172a;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
-#gate{display:none;flex-direction:column;gap:12px;align-items:center;padding:30px;text-align:center}
-input{font-size:17px;padding:12px 16px;border-radius:10px;border:none;width:230px;text-align:center}
-button{font-size:16px;font-weight:700;padding:12px 26px;border-radius:10px;border:none;background:#0ea5e9;color:#fff}
-#st{font-size:13px;opacity:.8;min-height:18px} .e{font-size:46px}</style></head>
-<body><div id="gate"><div class="e">🛂</div><div style="font-size:19px;font-weight:700">Arrival Cards</div>
-<div style="font-size:13px;opacity:.75">Enter the trip passphrase (remembered on this phone)</div>
-<input id="pw" type="password" placeholder="passphrase" autocomplete="current-password"><button id="go">Unlock</button><div id="st"></div></div>
-<div id="st" hidden></div>
-<script src="unlock.js"></script><script>openDoc('cards');</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Arrival Cards"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEA Trip — Arrival Cards Cheat-Sheet</title>
+<style>
+  :root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f6f7f9;margin:0;line-height:1.55}
+  .wrap{max-width:820px;margin:0 auto;padding:26px 18px 60px}
+  header{background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:25px}
+  header p{margin:0;opacity:.92;font-size:14px}
+  .warn{background:#fff7ed;border:1px solid #fdba74;border-radius:12px;padding:14px 16px;margin:16px 0;color:#9a3412;font-size:14px}
+  .warn b{color:#7c2d12}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .card h2{margin:0 0 2px;font-size:19px;display:flex;align-items:center;gap:9px}
+  .seq{background:#eef2ff;color:#4338ca;font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0}
+  td{padding:7px 4px;vertical-align:top;border-bottom:1px solid #f1f1f4}
+  td.k{color:var(--muted);width:150px;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  .go{display:inline-block;margin-top:12px;background:#111827;color:#fff;text-decoration:none;font-weight:600;font-size:13.5px;padding:9px 15px;border-radius:9px}
+  .win{display:inline-block;background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;font-weight:700;font-size:13px;padding:3px 10px;border-radius:8px}
+  .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+  .need{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:18px}
+  .need h3{margin:0 0 8px;font-size:16px}
+  .need ul{margin:0;padding-left:20px;font-size:14px}
+  .need li{margin:4px 0}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:26px}
+  code{background:#f3f4f6;padding:1px 6px;border-radius:5px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🛂 Arrival Cards — Cheat-Sheet</h1>
+    <p>Three countries, three free digital cards. Each opens a <b>3-day window before arrival</b>. Solo traveller — one QR each, emailed to you. Show the QR at immigration.</p>
+  </header>
+
+  <div class="warn">
+    ⚠️ <b>All three are 100% FREE.</b> There are dozens of copycat sites that charge a "fee" or harvest your passport data — they're often the top Google results (ads). <b>Only use the exact official URLs below — bookmark them now.</b> If an official site is down, try a different browser.
+  </div>
+
+  <!-- INDONESIA -->
+  <div class="card">
+    <h2><span class="seq">1st</span>🇮🇩 Indonesia — All Indonesia Arrival Card</h2>
+    <p class="sub">One unified form = immigration arrival + customs (old e-CD) + health declaration. Separate from your eVOA visa (already done ✅).</p>
+    <table>
+      <tr><td class="k">Arrive on</td><td>Jetstar <b>JQ110</b> · Perth → Denpasar (DPS) · <b>Sat 4 Jul 2026</b></td></tr>
+      <tr><td class="k">Submit window</td><td><span class="win">Wed 1 Jul → 4 Jul</span> (within 72h before arrival) — do it before you leave Perth</td></tr>
+      <tr><td class="k">1st-night address</td><td>Shore Amora Canggu · <b>Jl. Pantai Pererenan, Pererenan, Mengwi, Badung Regency 80351, Bali</b> · +62 819 9911 9595</td></tr>
+      <tr><td class="k">Official site</td><td><code>allindonesia.imigrasi.go.id</code> (or "All Indonesia" app)</td></tr>
+    </table>
+    <a class="go" href="https://allindonesia.imigrasi.go.id/" target="_blank">→ allindonesia.imigrasi.go.id</a>
+    <p class="note">Returns a QR by email. Have it ready at DPS immigration + the customs lane.</p>
+  </div>
+
+  <!-- SINGAPORE -->
+  <div class="card">
+    <h2><span class="seq">2nd</span>🇸🇬 Singapore — SG Arrival Card (SGAC)</h2>
+    <p class="sub">Includes the electronic health declaration. False declarations are an offence — keep it honest.</p>
+    <table>
+      <tr><td class="k">Arrive on</td><td>Scoot <b>TR289</b> · Denpasar → Changi (lands 16:55) · <b>Tue 14 Jul 2026</b></td></tr>
+      <tr><td class="k">Submit window</td><td><span class="win">Sat 11 Jul → 14 Jul</span> (within 3 days incl. arrival day) — do it from Bali</td></tr>
+      <tr><td class="k">1st-night address</td><td>Heritage Collection on Chinatown · <b>227 South Bridge Road, Singapore 058787</b></td></tr>
+      <tr><td class="k">Official site</td><td><code>eservices.ica.gov.sg/sgarrivalcard</code> (or <b>MyICA</b> app)</td></tr>
+    </table>
+    <a class="go" href="https://eservices.ica.gov.sg/sgarrivalcard" target="_blank">→ eservices.ica.gov.sg/sgarrivalcard</a>
+    <p class="note">✈️ <b>Flying home (2–3 Aug):</b> TR649 USM→SIN→MEL only <b>transits</b> Changi airside — you don't clear Singapore immigration, so <b>no SGAC needed</b> for the trip home.</p>
+  </div>
+
+  <!-- THAILAND -->
+  <div class="card">
+    <h2><span class="seq">3rd</span>🇹🇭 Thailand — TDAC (Digital Arrival Card)</h2>
+    <p class="sub">Mandatory for all foreigners since May 2025. Replaces the old paper TM6 card.</p>
+    <table>
+      <tr><td class="k">Arrive on</td><td>Singapore Airlines <b>SQ726</b> · Singapore → Phuket (lands 08:35) · <b>Sat 18 Jul 2026</b></td></tr>
+      <tr><td class="k">Submit window</td><td><span class="win">Wed 15 Jul → 18 Jul</span> (within 72h before arrival) — do it from Singapore</td></tr>
+      <tr><td class="k">1st-night address</td><td>Stay Wellbeing &amp; Lifestyle Resort · <b>116/29 Soi Saiyuan 10, Tambon Rawai, Phuket 83130</b> · +66 76 380 333</td></tr>
+      <tr><td class="k">Official site</td><td><code>tdac.immigration.go.th</code></td></tr>
+    </table>
+    <a class="go" href="https://tdac.immigration.go.th/" target="_blank">→ tdac.immigration.go.th</a>
+    <p class="note">⚠️ Traveller tip: <b>don't set your departure date = arrival date</b> — the form then assumes you're transiting and greys out the accommodation field. Returns a QR by email.</p>
+  </div>
+
+  <div class="need">
+    <h3>📋 Have these handy for all three</h3>
+    <ul>
+      <li><b>Passport</b> — number + expiry (✔ check 6+ months validity past 2 Aug)</li>
+      <li><b>Arrival flight number</b> — listed on each card above</li>
+      <li><b>First-night address</b> — pre-filled above for each country</li>
+      <li><b>An email you can check</b> — each card's QR is emailed to you</li>
+    </ul>
+    <p class="note">🇦🇺 <b>Coming home to Melbourne:</b> Australia's Incoming Passenger Card is the paper card handed out on the plane — fill it on board, nothing to pre-do.</p>
+  </div>
+
+  <p class="foot">Verified against official portals (imigrasi.go.id · ica.gov.sg · immigration.go.th) + traveller reports, 7 Jun 2026. Free government services only.</p>
+</div>
+</body>
+</html>

@@ -20,10 +20,10 @@
 <a class="tile" href="guide.html"><span class="te">🌏</span><span class="tt">Local Guide</span><span class="ts">204 SEPTA-researched places + photos</span></a>
 <a class="tile" href="cards.html"><span class="te">🛂</span><span class="tt">Arrival Cards</span><span class="ts">Indonesia · Singapore · Thailand</span></a>
 </div>
-<div class="foot" id="off">Works offline once opened ✈️ · content encrypted 🔒</div>
+<div class="foot" id="off">Works offline once opened ✈️ · add to home screen 📲</div>
 <script>
 (function(){
-  const dep=new Date('2026-07-04T06:50:00+08:00'), home=new Date('2026-08-03T11:45:00+10:00'), now=new Date();
+  const dep=new Date('2026-07-04T09:15:00+10:00'), home=new Date('2026-08-03T11:45:00+10:00'), now=new Date();
   const el=document.getElementById('cd');
   if(now<dep){const d=Math.ceil((dep-now)/864e5);el.textContent='✈️ '+d+' day'+(d===1?'':'s')+' until take-off — 4 Jul';}
   else if(now<home){const d=Math.floor((now-dep)/864e5)+1;el.textContent='🌴 Day '+d+' of 29 — have the best time';}
