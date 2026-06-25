@@ -40,6 +40,10 @@
   .tools{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--mut);padding:4px 4px 0}
   .tools button{background:none;border:1px solid var(--line);border-radius:7px;color:var(--mut);font-size:11.5px;padding:4px 10px}
   .foot{text-align:center;font-size:11px;color:#94a3b8;margin:20px 0}
+  .ci{width:46px;height:46px;object-fit:contain;border-radius:6px;background:#fff;border:1px solid var(--line);flex:none;cursor:zoom-in}
+  .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;align-items:center;justify-content:center;padding:20px}
+  .lb.on{display:flex}
+  .lb img{max-width:100%;max-height:100%;border-radius:8px}
 </style>
 </head>
 <body>
@@ -77,13 +81,13 @@
     <div class="sub">💻 Laptop sleeve</div>
     <label class="item"><input type="checkbox"><span class="t">MacBook Air</span></label>
 
-    <div class="sub">🔌 Tech pouch</div>
+    <div class="sub"><img class="ci" src="https://cdn.shopify.com/s/files/1/2986/1172/files/smalltechpouch-black-159A0505_10187358-9116-45c9-bf04-93a326319830.jpg?v=1762275795&amp;width=300" onerror="this.remove()" onclick="lb(this.src)" alt="">🔌 Tech pouch <span class="meta" style="font-weight:400">(your cable pouch — photo is a similar style)</span></div>
     <label class="item"><input type="checkbox"><span class="t">Epicka 70W adapter</span></label>
     <label class="item"><input type="checkbox"><span class="t">Laptop USB-C cable + 2× USB-C cords <span class="meta">+ Lightning if needed</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Nitecore NB10000 power bank <span class="meta">must be carry-on</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">AirPods</span></label>
 
-    <div class="sub">💊 Med cube (ProCase pouch #1)</div>
+    <div class="sub"><img class="ci" src="https://procase.com/cdn/shop/files/2Pack-ProCaseTSAApprovedTravelToiletryBagPouch-MatteClearQuartSizeBagCarry-OnAirportAirlineCompl_9212_1.jpg?v=1700059078&amp;width=300" onerror="this.remove()" onclick="lb(this.src)" alt="">💊 Med cube (ProCase clear pouch)</div>
     <label class="item"><input type="checkbox"><span class="t">Prescription meds: a prescription med · a prescription med <span class="meta">+ doctor's letters</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Anxiety/flight med — anxiety/flight med <span class="meta">original box + script</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Travel kit: a prescription med · loperamide · ondansetron · cetirizine <span class="meta">cetirizine = antihistamine</span></span></label>
@@ -94,12 +98,12 @@
 
     <div class="sub">🛂 Docs pouch — just a ziplock for passport + papers</div>
     <label class="item"><input type="checkbox"><span class="t">Passport <span class="meta">valid 6+ mths past 3 Aug</span></span></label>
-    <label class="item"><input type="checkbox"><span class="t">Backup bank card <span class="meta">keep one card separate from your wallet, just in case</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">Backup bank card — your CBA card <span class="meta">kept separate from the Wise/ING in your wallet, in case that's lost/eaten/frozen</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Cash (AUD + USD)</span></label>
     <label class="item"><input type="checkbox"><span class="t">Printed eVOA visa + arrival cards</span></label>
     <label class="item"><input type="checkbox"><span class="t">Travel insurance details</span></label>
 
-    <div class="sub">💳 Bellroy Card Pocket (front pocket)</div>
+    <div class="sub"><img class="ci" src="https://wildbounds.com/cdn/shop/products/bellroy-card-pocket-card-holders-one-size-charcoal-cobalt-wcpa-chc-101-34510500921511.jpg?v=1676546167" onerror="this.remove()" onclick="lb(this.src)" alt="">💳 Bellroy Card Pocket (front pocket)</div>
     <label class="item"><input type="checkbox"><span class="t">Wise · ING · daily cash</span></label>
 
     <div class="sub">👟 Shoes (carry-on)</div>
@@ -120,29 +124,29 @@
   <div class="card check">
     <div class="ch">🟢 Checked main pack <span class="n">40L</span></div>
 
-    <div class="sub">🟦 Reveal cubes (XS/S/M) — clothes</div>
+    <div class="sub"><img class="ci" src="https://eaglecreek.com/cdn/shop/files/EC050406_424_a.jpg?v=1747674456&amp;width=300" onerror="this.remove()" onclick="lb(this.src)" alt="">🟦 Reveal cubes (XS/S/M) — clothes</div>
     <label class="item"><input type="checkbox"><span class="t">Tees: 2× Mons Royale · Icebreaker · Vuori Strato · Patagonia Capilene · 3× lululemon</span></label>
     <label class="item"><input type="checkbox"><span class="t">3× Icebreaker boxers · 2× SAXX boxers</span></label>
     <label class="item"><input type="checkbox"><span class="t">2× Injinji socks · 3× RunDNA socks</span></label>
     <label class="item"><input type="checkbox"><span class="t">Outlier pants · Patagonia Baggies · Vuori Kore short · AS Colour boardshorts · rash vest</span></label>
     <label class="item"><input type="checkbox"><span class="t">Luca Faloni linen shirt <span class="meta">nice dinners</span></span></label>
 
-    <div class="sub">🟪 Compression cube M</div>
+    <div class="sub"><img class="ci" src="https://www.luggagepros.com/cdn/shop/files/Eagle-Creek-Pack-It-Reveal-Compression-Cube-M.jpg?v=1718515984&amp;width=300" onerror="this.remove()" onclick="lb(this.src)" alt="">🟪 Compression cube M</div>
     <label class="item"><input type="checkbox"><span class="t">Patagonia R1 Air pullover <span class="meta">(+ FMP tee once bought)</span></span></label>
 
-    <div class="sub">🧴 Toiletry bag</div>
+    <div class="sub"><img class="ci" src="https://www.bergmanluggage.com/cdn/shop/files/EC0A48ZD_010_a_1500x_35871eef-4944-4cff-9b28-0c0e865251ac_1000x1000.jpg?v=1690246680" onerror="this.remove()" onclick="lb(this.src)" alt="">🧴 Toiletry bag <span class="meta" style="font-weight:400">(similar hanging dopp-kit style)</span></div>
     <label class="item"><input type="checkbox"><span class="t">Cetaphil cleanser · CeraVe night cream</span></label>
     <label class="item"><input type="checkbox"><span class="t">Dove + Wild deo · toothbrush · paste tablets · floss</span></label>
     <label class="item"><input type="checkbox"><span class="t">Razor + cream · clippers</span></label>
     <label class="item"><input type="checkbox"><span class="t">Tweezers · nail scissors · nose trimmer <span class="meta">sharps — checked only</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Vaseline · Body Glide · exfoliating cloth</span></label>
 
-    <div class="sub">💧 Liquids pouch (ProCase quart) — over 100ml</div>
+    <div class="sub"><img class="ci" src="https://procase.com/cdn/shop/files/2Pack-ProCaseTSAApprovedTravelToiletryBagPouch-MatteClearQuartSizeBagCarry-OnAirportAirlineCompl_9212_1.jpg?v=1700059078&amp;width=300" onerror="this.remove()" onclick="lb(this.src)" alt="">💧 Liquids pouch (ProCase quart) — over 100ml</div>
     <label class="item"><input type="checkbox"><span class="t">LRP Anthelios UVMUNE 400 ×2 <span class="meta">face SPF50+</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Sun Bum SPF50+ 473ml <span class="meta">body, reef-safe</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Picaridin 20% repellent ×2 <span class="meta">dengue</span></span></label>
 
-    <div class="sub">👟 Shoe bag</div>
+    <div class="sub"><img class="ci" src="https://travelpro.com/cdn/shop/files/40218AQ01-1500x1500-f3a2c67.jpg" onerror="this.remove()" onclick="lb(this.src)" alt="">👟 Shoe bag</div>
     <label class="item"><input type="checkbox"><span class="t">Clean leather shoes <span class="meta">ATLAS / CÉ LA VI / dinners</span></span></label>
     <div class="warn">👟 3 pairs: Birks worn flying (day/beach) · Salomons in carry-on (exercise + treks) · leather shoes here (nice nights).</div>
 
@@ -150,7 +154,7 @@
     <label class="item"><input type="checkbox"><span class="t">Soak Minisoak · detergent sheets · citric acid</span></label>
     <label class="item"><input type="checkbox"><span class="t">S2S clothesline + sink plug</span></label>
 
-    <div class="sub">🎒 Dry bag · laundry bag · loose</div>
+    <div class="sub"><img class="ci" src="https://seatosummit.com/cdn/shop/products/01_Ultra-SilDryBagTarragonOpen.jpg?v=1741380767" onerror="this.remove()" onclick="lb(this.src)" alt=""><img class="ci" src="https://www.matadorequipment.com/cdn/shop/files/MATLB1001BK_Matador_Laundrybag_1.jpg?v=1759352581" onerror="this.remove()" onclick="lb(this.src)" alt="">🎒 Dry bag · laundry bag · loose</div>
     <label class="item"><input type="checkbox"><span class="t">S2S dry bag 8L <span class="meta">wet swimwear / wash vessel</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Matador laundry bag 30L <span class="meta">packs flat</span></span></label>
     <label class="item"><input type="checkbox"><span class="t">Hydro Flask <span class="meta">empty through security</span></span></label>
@@ -238,6 +242,8 @@
   };
   bindFixed(); renderCustom(); prog();
 })();
+window.lb=function(s){document.getElementById('lbimg').src=s;document.getElementById('lbov').classList.add('on');};
 </script>
+<div class="lb" id="lbov" onclick="this.classList.remove('on')"><img id="lbimg" src="" alt=""></div>
 </body>
 </html>
