@@ -2124,14 +2124,18 @@ body.modal-open{overflow:hidden}
     .cost-cat-name{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em;text-transform:uppercase;letter-spacing:.06em}
     .cost-cat-total{font-size:15px;font-weight:600;color:#1a1a1a}
     .no-entries{font-size:13px;color:#999;text-align:center;padding:2rem;background:#fafafa;border-radius:8px;border:1px dashed #ddd}
+    .cost-stat.clk{cursor:pointer;transition:transform .1s}.cost-stat.clk:active{transform:scale(.97)}
+    .cost-cat-item{cursor:pointer}.cost-cat-item.active{outline:2px solid #92400e;outline-offset:-1px}
+    .cost-filter-banner{font-size:12px;color:#92400e;background:#fffbeb;border:1px solid #f3e2c0;border-radius:8px;padding:8px 12px;margin-bottom:8px}
+    .cost-filter-banner a{color:#1d4ed8;cursor:pointer;text-decoration:underline}
   </style>
 
   <div class="cost-summary" id="costSummary">
-    <div class="cost-stat"><div class="cost-stat-val" id="totalSpent">AUD 15,869</div><div class="cost-stat-lbl">Total committed</div></div>
-    <div class="cost-stat"><div class="cost-stat-val" id="flightsTotal">AUD 2,285</div><div class="cost-stat-lbl">Flights (4 booked)</div></div>
-    <div class="cost-stat"><div class="cost-stat-val" id="hotelsTotal">AUD 8,405</div><div class="cost-stat-lbl">Hotels (11 booked)</div></div>
-    <div class="cost-stat"><div class="cost-stat-val" id="activitiesTotal">AUD 129</div><div class="cost-stat-lbl">Activities (1 booked)</div></div>
-    <div class="cost-stat"><div class="cost-stat-val" id="gearTotal">AUD 4,868</div><div class="cost-stat-lbl">🎒 Packing & Gear</div></div>
+    <div class="cost-stat clk" onclick="filterCost(null)"><div class="cost-stat-val" id="totalSpent">AUD 15,869</div><div class="cost-stat-lbl">Total committed</div></div>
+    <div class="cost-stat clk" onclick="filterCost('flights')"><div class="cost-stat-val" id="flightsTotal">AUD 2,285</div><div class="cost-stat-lbl">Flights (4 booked)</div></div>
+    <div class="cost-stat clk" onclick="filterCost('hotels')"><div class="cost-stat-val" id="hotelsTotal">AUD 8,405</div><div class="cost-stat-lbl">Hotels (11 booked)</div></div>
+    <div class="cost-stat clk" onclick="filterCost('activities')"><div class="cost-stat-val" id="activitiesTotal">AUD 129</div><div class="cost-stat-lbl">Activities (1 booked)</div></div>
+    <div class="cost-stat clk" onclick="filterCost('gear')"><div class="cost-stat-val" id="gearTotal">AUD 4,868</div><div class="cost-stat-lbl">🎒 Packing & Gear</div></div>
     <div class="cost-stat"><div class="cost-stat-val" id="otherTotal">AUD 1,020</div><div class="cost-stat-lbl">Spa · Visa · Insurance · SIM</div></div>
     <div class="cost-stat"><div class="cost-stat-val" id="entryCount">54</div><div class="cost-stat-lbl">Expenses logged</div></div>
   </div>
@@ -3354,6 +3358,7 @@ let costs = [
   { id:90, desc:'Travel clinic + all vaccines (Sonic HealthPlus, incl. rabies course)', amt:900, cat:'other', dest:'Pre-trip', date:'2026-06-25' },
   { id:91, desc:'Travel adapter — replacement (bought 29 Jun, after EPICKA refund)', amt:100, cat:'gear', dest:'Pre-trip', date:'2026-06-29' }
 ];
+let costFilter = null;
 
 const COSTS_VERSION = '2026-06-29-v17';
 function saveCosts() {
@@ -3406,6 +3411,8 @@ function deleteCost(id) {
   renderCosts();
 }
 
+function filterCost(cat){ costFilter = (cat && costFilter === cat) ? null : cat; renderCosts(); var el=document.getElementById('costList'); if(el && costFilter) el.scrollIntoView({behavior:'smooth',block:'start'}); }
+
 function renderCosts() {
   const list = document.getElementById('costList');
   const total = costs.reduce((s, c) => s + c.amt, 0);
@@ -3420,7 +3427,7 @@ function renderCosts() {
   document.getElementById('otherTotal').textContent = fmt((bycat.spa||0)+(bycat.food||0)+(bycat.transport||0)+(bycat.other||0)+(bycat.spin||0));
   document.getElementById('entryCount').textContent = costs.length;
   document.getElementById('catBreakdown').innerHTML = Object.keys(CAT_LABELS).filter(k => bycat[k]).map(k => `
-    <div class="cost-cat-item">
+    <div class="cost-cat-item${k===costFilter?' active':''}" onclick="filterCost('${k}')">
       <div class="cost-cat-dot" style="background:${CAT_COLORS[k]}"></div>
       <div class="cost-cat-info">
         <div class="cost-cat-name">${CAT_LABELS[k]}</div>
@@ -3428,7 +3435,9 @@ function renderCosts() {
       </div>
     </div>`).join('');
   if (costs.length === 0) { list.innerHTML = '<div class="no-entries">No expenses yet — add your first one above</div>'; return; }
-  list.innerHTML = [...costs].reverse().map(c => `
+  const shown = costFilter ? costs.filter(c => c.cat === costFilter) : costs;
+  const fbanner = costFilter ? '<div class="cost-filter-banner">Showing <b>'+(CAT_LABELS[costFilter]||costFilter)+'</b> \u00b7 '+shown.length+' item'+(shown.length===1?'':'s')+' \u00b7 <a onclick="filterCost(null)">\u00d7 show all</a></div>' : '';
+  list.innerHTML = fbanner + [...shown].reverse().map(c => `
     <div class="cost-entry">
       <div class="cost-entry-cat" style="background:${CAT_COLORS[c.cat]}"></div>
       <div class="cost-entry-info">
