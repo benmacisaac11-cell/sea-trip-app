@@ -1,6 +1,6 @@
 
-const V = 'sea-v3';
-const PRECACHE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "itinerary.html", "packing.html", "guide.html", "cards.html"];
+const V = 'sea-v4';
+const PRECACHE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "itinerary.html", "tobook.html", "packing.html", "guide.html", "cards.html"];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(V).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
 });

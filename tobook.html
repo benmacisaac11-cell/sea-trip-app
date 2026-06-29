@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="To Book"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEA Trip — To Book</title>
+<style>
+  :root{--ink:#1f2937;--mut:#64748b;--line:#e5e7eb;--done:#16a34a;--blue:#1d4ed8}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f1f5f9;color:var(--ink);line-height:1.45;padding-bottom:60px}
+  header{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:14px 16px 13px;position:sticky;top:0;z-index:10}
+  header a.home{color:#cbd5e1;text-decoration:none;font-size:12.5px}
+  header h1{margin:5px 0 0;font-size:19px}
+  .prog{margin-top:8px;font-size:12.5px;opacity:.92}
+  .bar{height:7px;background:rgba(255,255,255,.22);border-radius:20px;margin-top:6px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:#34d399;border-radius:20px;transition:width .25s}
+  .wrap{max-width:760px;margin:0 auto;padding:0 12px}
+  .card{background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin:14px 0;overflow:hidden}
+  .ch{padding:11px 15px;font-weight:700;font-size:14px;border-bottom:1px solid var(--line)}
+  .now .ch{background:#fef2f2;color:#b91c1c}
+  .soon .ch{background:#fffbeb;color:#b45309}
+  .opt .ch{background:#f5f3ff;color:#6d28d9}
+  .arr .ch{background:#ecfdf5;color:#047857}
+  .item{display:flex;align-items:flex-start;gap:11px;padding:11px 15px;border-bottom:1px solid #f1f5f9;cursor:pointer;user-select:none}
+  .item:last-child{border-bottom:0}
+  .item input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:6px;margin:0;position:relative;top:1px}
+  .item input:checked{background:var(--done);border-color:var(--done)}
+  .item input:checked::after{content:"✓";color:#fff;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
+  .item .t{font-size:14px}
+  .item input:checked ~ .t{color:#9aa6b2;text-decoration:line-through}
+  .item .meta{display:block;color:var(--mut);font-size:12px;margin-top:1px}
+  .item a{color:var(--blue)}
+  .foot{text-align:center;font-size:11px;color:#94a3b8;margin:18px 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="home" href="index.html">← All tabs</a>
+    <h1>🎫 To Book</h1>
+    <div class="prog"><span id="cnt">0 / 0 done</span><div class="bar"><i id="barfill"></i></div></div>
+  </div>
+</header>
+<div class="wrap">
+
+  <div class="card now">
+    <div class="ch">🔴 Book now / this week</div>
+    <label class="item"><input type="checkbox"><span class="t">🪂 Paragliding Timbis — Sun 12 Jul<span class="meta"><a href="https://wa.me/6281338795859" target="_blank" onclick="event.stopPropagation()">WhatsApp +62 813 3879 5859</a> · reserve pilot now, confirm morning-of · ~$75–100</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">🦒 Night Safari, Singapore — Fri 17 Jul<span class="meta"><a href="https://www.klook.com/activity/421-night-safari-singapore/" target="_blank" onclick="event.stopPropagation()">Klook</a> · ⚠️ confirm sister-in-law + brother free FRI first · ~$65</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">🍽️ Room4Dessert, Ubud<span class="meta"><a href="https://www.room4dessert.com" target="_blank" onclick="event.stopPropagation()">room4dessert.com</a> · book ahead (closed Mon)</span></span></label>
+  </div>
+
+  <div class="card soon">
+    <div class="ch">🟡 Book ahead during the trip</div>
+    <label class="item"><input type="checkbox"><span class="t">🌿 Gardens by the Bay — Thu 17 Jul<span class="meta">Cloud Forest + Flower Dome combo · SGD 28</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">🌲 Jungle Club shuttle + dinner, Samui — Thu 23 Jul<span class="meta"><a href="tel:+66814696447" onclick="event.stopPropagation()">+66 81 469 6447</a> · call ≥3 days ahead, book the table too</span></span></label>
+  </div>
+
+  <div class="card opt">
+    <div class="ch">⚪ Optional (only if keen)</div>
+    <label class="item"><input type="checkbox"><span class="t">🏍️ ATV Tunnel + Waterfall, Bali — Fri 10 Jul<span class="meta">~$65–75</span></span></label>
+    <label class="item"><input type="checkbox"><span class="t">🎟️ Savaya day club — Sun 12 Jul<span class="meta">likely skipping · sells out 2–3 wks ahead if yes</span></span></label>
+  </div>
+
+  <div class="card arr">
+    <div class="ch">✅ On arrival — just turn up / hotel arranges</div>
+    <label class="item"><input type="checkbox"><span class="t">🚐 DPS airport → hotel (4 Jul) · 🏄 Canggu surf (6 Jul) · 🛶 Ayung rafting (9 Jul)</span></label>
+    <label class="item"><input type="checkbox"><span class="t">🌾 Tegallalang + Aloha Swing driver (10 Jul) · 🏄 Padang Padang surf (13 Jul)</span></label>
+    <label class="item"><input type="checkbox"><span class="t">🚣 Angthong day trip (22 Jul) · 🌕 FMP transfer (31 Jul) · 🚐 Samui pier taxi (2 Aug)</span></label>
+    <label class="item"><input type="checkbox"><span class="t">🚴 Spin classes — book as you arrive in each city (ClassPass)</span></label>
+  </div>
+
+  <div class="foot">Ticks save on this device · from your itinerary's "Still to book" list</div>
+</div>
+<script>
+(function(){
+  const KEY='sea_tobook_ticks_v1';
+  const ticks=JSON.parse(localStorage.getItem(KEY)||'{}');
+  function save(){localStorage.setItem(KEY,JSON.stringify(ticks))}
+  function slug(el){return el.closest('.item').querySelector('.t').textContent.trim().slice(0,80)}
+  function prog(){
+    const all=document.querySelectorAll('.item input');
+    const done=[...all].filter(cb=>cb.checked).length;
+    document.getElementById('cnt').textContent=done+' / '+all.length+' done';
+    document.getElementById('barfill').style.width=(all.length?Math.round(done/all.length*100):0)+'%';
+  }
+  document.querySelectorAll('.item input').forEach(cb=>{
+    const k=slug(cb);
+    if(ticks[k]) cb.checked=true;
+    cb.addEventListener('change',()=>{ticks[k]=cb.checked; if(!cb.checked)delete ticks[k]; save(); prog();});
+  });
+  prog();
+})();
+</script>
+</body>
+</html>
