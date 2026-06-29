@@ -7,11 +7,10 @@
 <style>
   :root{--ink:#1f2937;--mut:#64748b;--line:#e5e7eb;--blue:#1d4ed8}
   *{box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f1f5f9;color:var(--ink);line-height:1.45;padding-bottom:60px}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f1f5f9;color:var(--ink);line-height:1.45;padding-bottom:50px}
   header{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:14px 16px 13px;position:sticky;top:0;z-index:10}
   header a.home{color:#cbd5e1;text-decoration:none;font-size:12.5px}
   header h1{margin:5px 0 0;font-size:19px}
-  header .sub{font-size:12px;opacity:.85;margin-top:4px}
   .wrap{max-width:760px;margin:0 auto;padding:0 12px}
   .card{background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin:14px 0;overflow:hidden}
   .ch{padding:11px 15px;font-weight:700;font-size:14px;border-bottom:1px solid var(--line);background:#f8fafc}
@@ -21,12 +20,6 @@
   .doc .t{font-size:14px;font-weight:600}
   .doc .m{display:block;color:var(--mut);font-size:12px;font-weight:400;margin-top:1px}
   .doc .go{margin-left:auto;color:var(--blue);font-size:18px;flex:none}
-  .info{padding:11px 15px;border-bottom:1px solid #f1f5f9;font-size:13px}
-  .info:last-child{border-bottom:0}
-  .info .t{font-weight:600}
-  .info .m{color:var(--mut);font-size:12px;margin-top:1px}
-  .note{background:#fffbeb;border-left:3px solid #f59e0b;margin:0;padding:8px 15px;font-size:12px;color:#92400e}
-  .foot{text-align:center;font-size:11px;color:#94a3b8;margin:18px 0;padding:0 16px}
 </style>
 </head>
 <body>
@@ -34,16 +27,14 @@
   <div class="wrap">
     <a class="home" href="index.html">← All tabs</a>
     <h1>📄 Documents</h1>
-    <div class="sub">Bookings open the actual PDF · passport &amp; licence stay private</div>
   </div>
 </header>
 <div class="wrap">
 
   <div class="card">
     <div class="ch">🛂 Identity</div>
-    <a class="doc" href="https://www.dropbox.com/home/Finances?preview=Ben%20Passport.pdf" target="_blank"><span class="ic">🛂</span><span class="t">Passport scan<span class="m">Opens privately in your Dropbox (Finances › Ben Passport.pdf)</span></span><span class="go">›</span></a>
-    <a class="doc" href="https://www.dropbox.com/home/Misc?preview=Drivers%20License%20New.pdf" target="_blank"><span class="ic">🪪</span><span class="t">Driver's licence<span class="m">Opens privately in your Dropbox (Misc) · carry with your IDP for scooters</span></span><span class="go">›</span></a>
-    <div class="info"><span class="t">🛵 International Driving Permit (IDP)</span><span class="m">Physical card from RACV — carry it alongside your licence (insurance void without both)</span></div>
+    <a class="doc" href="https://www.dropbox.com/home/Finances?preview=Ben%20Passport.pdf" target="_blank"><span class="ic">🛂</span><span class="t">Passport scan<span class="m">Opens privately in your Dropbox</span></span><span class="go">›</span></a>
+    <a class="doc" href="https://www.dropbox.com/home/Misc?preview=Drivers%20License%20New.pdf" target="_blank"><span class="ic">🪪</span><span class="t">Driver's licence<span class="m">Opens privately in your Dropbox</span></span><span class="go">›</span></a>
   </div>
 
   <div class="card">
@@ -76,24 +67,15 @@
   <div class="card">
     <div class="ch">🛡️ Insurance — Cover-More</div>
     <a class="doc" href="docs/insurance-certificate.pdf" target="_blank"><span class="ic">🛡️</span><span class="t">Policy certificate<span class="m">International Comprehensive · 4 Jul–2 Aug</span></span><span class="go">›</span></a>
-    <a class="doc" href="docs/insurance-emergency-card.pdf" target="_blank"><span class="ic">🆘</span><span class="t">Emergency assistance card<span class="m">Keep handy if anything goes wrong</span></span><span class="go">›</span></a>
-    <div class="info"><span class="t">📞 24h emergency</span><span class="m">1300 72 88 22 (AU) · +61 2 8907 5619 (worldwide)</span></div>
+    <a class="doc" href="docs/insurance-emergency-card.pdf" target="_blank"><span class="ic">🆘</span><span class="t">Emergency assistance card<span class="m">24h numbers inside</span></span><span class="go">›</span></a>
   </div>
 
   <div class="card">
     <div class="ch">🛬 Visa &amp; arrival cards</div>
     <a class="doc" href="docs/indonesia-evoa.pdf" target="_blank"><span class="ic">🇮🇩</span><span class="t">Indonesia e-VOA (approved)<span class="m">Present at DPS immigration on arrival</span></span><span class="go">›</span></a>
-    <a class="doc" href="cards.html"><span class="ic">🛂</span><span class="t">Arrival cards (Indonesia · Singapore · Thailand)<span class="m">Cheat-sheet + official links — see the Arrival Cards tab</span></span><span class="go">›</span></a>
+    <a class="doc" href="cards.html"><span class="ic">🛂</span><span class="t">Arrival cards (Indonesia · Singapore · Thailand)<span class="m">Cheat-sheet — see the Arrival Cards tab</span></span><span class="go">›</span></a>
   </div>
 
-  <div class="card">
-    <div class="ch">🩺 Medical</div>
-    <div class="info"><span class="t">Doctor's letters — prescription meds + anxiety/flight med</span><span class="m">Carry the printed letters + meds in original labelled boxes (strict customs)</span></div>
-    <div class="info"><span class="t">🇸🇬 Singapore HSA approval</span><span class="m">Lodged — arrives by email ~12 Jul; save the PDF offline before the 14 Jul Singapore flight</span></div>
-  </div>
-
-  <div class="note">🔒 Bookings open the actual PDF/page. Passport &amp; licence are kept <b>off</b> this (publicly-hosted) app on purpose — they open privately in your Dropbox instead. Tip: in the Dropbox app, mark them “Make available offline”.</div>
-  <div class="foot">Booking confirmations are bundled with the app so they open instantly, even offline.</div>
 </div>
 </body>
 </html>
