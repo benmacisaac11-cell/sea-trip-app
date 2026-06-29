@@ -3349,10 +3349,13 @@ let costs = [
   { id:86, desc:'REFUND — EPICKA adapter (never arrived, full refund)', amt:-99.58, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
   { id:87, desc:'REFUND — Pelican Marine pouch 2-pack', amt:-44.89, cat:'gear', dest:'Pre-trip', date:'2026-06-16' },
   { id:88, desc:'REFUND — Frio insulin wallet (net of return shipping)', amt:-42.28, cat:'gear', dest:'Pre-trip', date:'2026-06-16' },
-  { id:89, desc:'REFUND — Mons Royale tees ×2', amt:-199.90, cat:'gear', dest:'Pre-trip', date:'2026-06-25' }
+  { id:89, desc:'REFUND — Mons Royale tees ×2', amt:-199.90, cat:'gear', dest:'Pre-trip', date:'2026-06-25' },
+  // --- Added manually 29 Jun (Ben-confirmed amounts) ---
+  { id:90, desc:'Travel clinic + all vaccines (Sonic HealthPlus, incl. rabies course)', amt:900, cat:'other', dest:'Pre-trip', date:'2026-06-25' },
+  { id:91, desc:'Travel adapter — replacement (bought 29 Jun, after EPICKA refund)', amt:100, cat:'gear', dest:'Pre-trip', date:'2026-06-29' }
 ];
 
-const COSTS_VERSION = '2026-06-29-v16';
+const COSTS_VERSION = '2026-06-29-v17';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
