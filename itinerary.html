@@ -3302,7 +3302,7 @@ let costs = [
   { id:40, desc:'Patagonia Baggies Longs 7" Tidepool Blue L (#532607)', amt:99.95, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
   { id:41, desc:'Icebreaker Anatomica boxers ×3 XL (#I295521)', amt:169.97, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
   { id:42, desc:'Vuori Kore Short Unlined 7" Charcoal L (#27304876)', amt:125, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
-  { id:43, desc:'Luca Faloni Portofino linen shirt 41 (#372917, incl ship)', amt:365, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
+  { id:43, desc:'Luca Faloni Portofino linen shirt 41 (#372917, incl ship)', amt:345, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
   { id:44, desc:'Bellroy Card Pocket Charcoal (#AU509407131)', amt:95, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
   { id:45, desc:'Oakley sunglasses frame (#H00445118898)', amt:300, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
   { id:46, desc:'MRY polarized lens (#Y7854167, US$42.99)', amt:54, cat:'gear', dest:'Pre-trip', date:'2026-06-04' },
@@ -3333,10 +3333,26 @@ let costs = [
   { id:72, desc:'AMK Ultralight/Watertight .7 first-aid kit (Ultralight Gear #89821)', amt:62.96, cat:'gear', dest:'Pre-trip', date:'2026-06-06' },
   { id:73, desc:'Wise card — AUD loaded as spending money', amt:1500, cat:'spending', dest:'Trip', date:'2026-06-06' },
   { id:74, desc:'Wide-brim straw lifeguard hat — Mon 30 Jun CBD shop (planned: Rip Curl Brand Straw SKU 20359857-01 City Beach Bourke St; alt Hat World/Goorin $90-180)', amt:25, cat:'gear', dest:'Pre-trip', date:'2026-06-30' },
-  { id:75, desc:'YVTTOX 3-Pack Hat Clip — Beach Straw (Amazon AU, magnetic, 4.8★/44, 3-pack redundancy)', amt:16.99, cat:'gear', dest:'Pre-trip', date:'2026-06-29' }
+  { id:75, desc:'YVTTOX 3-Pack Hat Clip — Beach Straw (Amazon AU, magnetic, 4.8★/44, 3-pack redundancy)', amt:16.99, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
+  // --- Reconciled from Gmail sweep, 29 Jun 2026 (purchases missing from the original seed) ---
+  { id:76, desc:'Bellroy Travel Folio — passport wallet (#AU509413588)', amt:238, cat:'gear', dest:'Pre-trip', date:'2026-06-25' },
+  { id:77, desc:'Aer Cable Kit 3 tech pouch (Rushfaster #269065)', amt:137, cat:'gear', dest:'Pre-trip', date:'2026-06-25' },
+  { id:78, desc:'New Balance XT-6 sneakers (Mytheresa #AU142505325)', amt:355, cat:'gear', dest:'Pre-trip', date:'2026-06-18' },
+  { id:79, desc:'Kobo Libra Colour eReader 7" (Amazon)', amt:375.14, cat:'gear', dest:'Pre-trip', date:'2026-06-11' },
+  { id:80, desc:'Kobo Libra Colour SleepCover (Amazon)', amt:48.98, cat:'gear', dest:'Pre-trip', date:'2026-06-11' },
+  { id:81, desc:'DUDE Wipes flushable wipes 6-pack (Amazon)', amt:53.74, cat:'gear', dest:'Pre-trip', date:'2026-06-12' },
+  { id:82, desc:'Diveline — PADI Open Water eLearning + pool session', amt:795, cat:'activities', dest:'Pre-trip', date:'2026-06-23' },
+  { id:83, desc:'Chanel Allure Homme Sport — travel cologne 3×20ml', amt:198, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
+  { id:84, desc:'Groom Mate nose-hair trimmer (Beard and Blade #767288)', amt:48.98, cat:'gear', dest:'Pre-trip', date:'2026-06-26' },
+  { id:85, desc:'Priceline shipping (order #2024904856)', amt:9.95, cat:'gear', dest:'Pre-trip', date:'2026-06-06' },
+  // --- Refunds / returns (negative — net out of the total) ---
+  { id:86, desc:'REFUND — EPICKA adapter (never arrived, full refund)', amt:-99.58, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
+  { id:87, desc:'REFUND — Pelican Marine pouch 2-pack', amt:-44.89, cat:'gear', dest:'Pre-trip', date:'2026-06-16' },
+  { id:88, desc:'REFUND — Frio insulin wallet (net of return shipping)', amt:-42.28, cat:'gear', dest:'Pre-trip', date:'2026-06-16' },
+  { id:89, desc:'REFUND — Mons Royale tees ×2', amt:-199.90, cat:'gear', dest:'Pre-trip', date:'2026-06-25' }
 ];
 
-const COSTS_VERSION = '2026-06-06-v15';
+const COSTS_VERSION = '2026-06-29-v16';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
