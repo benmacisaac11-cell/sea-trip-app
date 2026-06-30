@@ -3013,8 +3013,8 @@ function clProgress() {
   const total = document.querySelectorAll('.cl-cb').length;
   const done = document.querySelectorAll('.cl-cb:checked').length;
   const pct = total > 0 ? (done / total * 100) : 0;
-  document.getElementById('clProgFill').style.width = pct + '%';
-  document.getElementById('clProgLabel').textContent = done + ' / ' + total + ' done';
+  var f = document.getElementById('clProgFill'); if (f) f.style.width = pct + '%';
+  var l = document.getElementById('clProgLabel'); if (l) l.textContent = done + ' / ' + total + ' done';
 }
 clProgress();
 
