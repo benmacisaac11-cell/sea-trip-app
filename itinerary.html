@@ -3190,24 +3190,24 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-06';
+const LIVESPEND_VERSION = '2026-07-06b';
 let liveSpend = {
   updated: '2026-07-06',
-  daysIn: 2.5,
+  daysIn: 3,
   wise: [
-    { cur:'IDR', flag:'🇮🇩', loadedAUD:1000, spentAUD:417.60, availAUD:582.40, pendingAUD:98.65, availLocal:'7,422,992', staged:false },
-    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:0,      availAUD:500,    pendingAUD:0,     availLocal:'11,636', staged:true },
-    { cur:'SGD', flag:'🇸🇬', loadedAUD:220,  spentAUD:0,      availAUD:220,    pendingAUD:0,     availLocal:'193',    staged:true }
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:1000, spentAUD:622.60, availAUD:377.40, pendingAUD:0, availLocal:'4,810,182', staged:false },
+    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:0,      availAUD:500,    pendingAUD:0, availLocal:'11,636', staged:true },
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:220,  spentAUD:0,      availAUD:220,    pendingAUD:0, availLocal:'193',    staged:true }
   ],
   up: { cashAUD:242.18, otherAUD:10.00, label:'Up card abroad (ATM cash-out + Jetstar)' },
   recent: [
-    { date:'6 Jul', merch:'Victory Fitness Club', local:'61,500 IDR', aud:4.83, src:'Wise' },
-    { date:'5 Jul', merch:'Up · International ATM cash-out', local:'', aud:242.18, src:'Up' },
+    { date:'6 Jul', merch:'Gingersnap Bali', local:'980,000 IDR', aud:76.89, src:'Wise' },
     { date:'5 Jul', merch:'Bella (bar/restaurant)', local:'861,300 IDR', aud:67.58, src:'Wise' },
-    { date:'5 Jul', merch:'The Bali Physio + Medical Bali', local:'700,000 IDR', aud:54.92, src:'Wise' },
-    { date:'4 Jul', merch:'Nelayan Art Market', local:'550,000 IDR', aud:43.15, src:'Wise' },
-    { date:'4 Jul', merch:'Shore Amora (on-site)', local:'550,000 IDR', aud:43.15, src:'Wise' },
-    { date:'4 Jul', merch:'ATM cash (BNI + Permata)', local:'1,365,000 IDR', aud:107.10, src:'Wise' }
+    { date:'6 Jul', merch:'Lusa by Suka', local:'506,110 IDR', aud:39.71, src:'Wise' },
+    { date:'6 Jul', merch:'The Bali Physio', local:'450,000 IDR', aud:35.31, src:'Wise' },
+    { date:'6 Jul', merch:'Butter Protein Club', local:'360,300 IDR', aud:28.27, src:'Wise' },
+    { date:'5 Jul', merch:'Up · International ATM cash-out', local:'3,000,000 IDR', aud:242.18, src:'Up' },
+    { date:'5 Jul', merch:'Medical Bali', local:'250,000 IDR', aud:19.61, src:'Wise' }
   ]
 };
 
