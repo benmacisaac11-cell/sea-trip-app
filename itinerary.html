@@ -1998,6 +1998,32 @@ body.modal-open{overflow:hidden}
     .cost-filter-banner a{color:#1d4ed8;cursor:pointer;text-decoration:underline}
   </style>
 
+  <style>
+    .ls-card{background:linear-gradient(135deg,#fffbeb,#fff);border:1px solid #f3e2c0;border-radius:12px;padding:1rem 1.15rem;margin-bottom:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+    .ls-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:.85rem;flex-wrap:wrap}
+    .ls-title{font-size:14px;font-weight:700;color:#1a1a1a}
+    .ls-title .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#16a34a;margin-right:6px;vertical-align:middle}
+    .ls-upd{font-size:11px;color:#999}
+    .ls-hero{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:.9rem}
+    .ls-hero-item .v{font-size:24px;font-weight:700;color:#92400e;line-height:1.1}
+    .ls-hero-item .l{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.05em}
+    .ls-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:.5rem}
+    .ls-row{background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:9px 11px}
+    .ls-row .cur{font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:5px}
+    .ls-bar{height:6px;border-radius:4px;background:#eee;overflow:hidden;margin-bottom:5px}
+    .ls-bar i{display:block;height:100%;background:#c9a96e}
+    .ls-row .fig{font-size:11px;color:#666}
+    .ls-row .fig b{color:#92400e}
+    .ls-recent{margin-top:.6rem;border-top:1px dashed #e5d9c2;padding-top:.6rem}
+    .ls-tx{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:3px 0;color:#333}
+    .ls-tx .m{color:#555;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .ls-tx .src{font-size:9px;padding:1px 5px;border-radius:6px;background:#f3e2c0;color:#92400e;margin-left:6px}
+    .ls-tx .src.up{background:#e6f0ff;color:#1d4ed8}
+    .ls-tx .a{font-weight:600;color:#92400e;white-space:nowrap}
+    .ls-note{font-size:10.5px;color:#999;margin-top:.6rem;line-height:1.4}
+  </style>
+  <div class="ls-card" id="liveSpendCard"></div>
+
   <div class="cost-summary" id="costSummary">
     <div class="cost-stat clk" onclick="filterCost(null)"><div class="cost-stat-val" id="totalSpent">AUD 15,869</div><div class="cost-stat-lbl">Total committed</div></div>
     <div class="cost-stat clk" onclick="filterCost('flights')"><div class="cost-stat-val" id="flightsTotal">AUD 2,285</div><div class="cost-stat-lbl">Flights (4 booked)</div></div>
@@ -3160,6 +3186,31 @@ const CAT_LABELS = {
   transport:'🚐 Transport', gear:'🎒 Packing & Gear', spending:'💵 Spending money', other:'💳 Other'
 };
 
+// ── LIVE ON-TRIP SPENDING ──────────────────────────────────────────────
+// Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
+// This is BURN-DOWN of money already loaded/counted in the committed total —
+// shown for live visibility, NOT re-added to the committed total.
+const LIVESPEND_VERSION = '2026-07-06';
+let liveSpend = {
+  updated: '2026-07-06',
+  daysIn: 2.5,
+  wise: [
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:1000, spentAUD:417.60, availAUD:582.40, pendingAUD:98.65, availLocal:'7,422,992', staged:false },
+    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:0,      availAUD:500,    pendingAUD:0,     availLocal:'11,636', staged:true },
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:220,  spentAUD:0,      availAUD:220,    pendingAUD:0,     availLocal:'193',    staged:true }
+  ],
+  up: { cashAUD:242.18, otherAUD:10.00, label:'Up card abroad (ATM cash-out + Jetstar)' },
+  recent: [
+    { date:'6 Jul', merch:'Victory Fitness Club', local:'61,500 IDR', aud:4.83, src:'Wise' },
+    { date:'5 Jul', merch:'Up · International ATM cash-out', local:'', aud:242.18, src:'Up' },
+    { date:'5 Jul', merch:'Bella (bar/restaurant)', local:'861,300 IDR', aud:67.58, src:'Wise' },
+    { date:'5 Jul', merch:'The Bali Physio + Medical Bali', local:'700,000 IDR', aud:54.92, src:'Wise' },
+    { date:'4 Jul', merch:'Nelayan Art Market', local:'550,000 IDR', aud:43.15, src:'Wise' },
+    { date:'4 Jul', merch:'Shore Amora (on-site)', local:'550,000 IDR', aud:43.15, src:'Wise' },
+    { date:'4 Jul', merch:'ATM cash (BNI + Permata)', local:'1,365,000 IDR', aud:107.10, src:'Wise' }
+  ]
+};
+
 let costs = [
   // Flights
   { id:1, desc:'JQ43 MEL→DPS (Jetstar · ••••••)', amt:899.03, cat:'flights', dest:'Canggu', date:'2026-05-26' },
@@ -3239,7 +3290,7 @@ let costs = [
   { id:71, desc:'Wild Mini Deodorant 16g (Priceline #2024904856)', amt:7.99, cat:'gear', dest:'Pre-trip', date:'2026-06-06' },
   { id:72, desc:'AMK Ultralight/Watertight .7 first-aid kit (Ultralight Gear #89821)', amt:62.96, cat:'gear', dest:'Pre-trip', date:'2026-06-06' },
   { id:73, desc:'Wise card — AUD loaded as spending money', amt:1500, cat:'spending', dest:'Trip', date:'2026-06-06' },
-  { id:74, desc:'Wide-brim straw lifeguard hat — Mon 30 Jun CBD shop (planned: Rip Curl Brand Straw SKU 20359857-01 City Beach Bourke St; alt Hat World/Goorin $90-180)', amt:25, cat:'gear', dest:'Pre-trip', date:'2026-06-30' },
+  { id:74, desc:'Straw hat — Quiksilver Waterman (City Beach Highpoint, confirmed via Up card)', amt:32.99, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
   { id:75, desc:'YVTTOX 3-Pack Hat Clip — Beach Straw (Amazon AU, magnetic, 4.8★/44, 3-pack redundancy)', amt:16.99, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
   // --- Reconciled from Gmail sweep, 29 Jun 2026 (purchases missing from the original seed) ---
   { id:76, desc:'Bellroy Travel Folio — passport wallet (#AU509413588)', amt:238, cat:'gear', dest:'Pre-trip', date:'2026-06-25' },
@@ -3259,13 +3310,14 @@ let costs = [
   { id:89, desc:'REFUND — Mons Royale tees ×2', amt:-199.90, cat:'gear', dest:'Pre-trip', date:'2026-06-25' },
   // --- Added manually 29 Jun (Ben-confirmed amounts) ---
   { id:90, desc:'Travel clinic + all vaccines (Sonic HealthPlus, incl. rabies course)', amt:900, cat:'other', dest:'Pre-trip', date:'2026-06-25' },
-  { id:91, desc:'Travel adapter — replacement (bought 29 Jun, after EPICKA refund)', amt:100, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
+  { id:91, desc:'Travel adapter — replacement (JB Hi-Fi, 29 Jun, after EPICKA refund; confirmed via Up card)', amt:99.95, cat:'gear', dest:'Pre-trip', date:'2026-06-29' },
   // --- Auto-sweep 6 Jul 2026 ---
-  { id:92, desc:'REFUND — Aer Cable Kit 3 (Rushfaster #269065, parcel undelivered, full refund)', amt:-137, cat:'gear', dest:'Pre-trip', date:'2026-07-03' }
+  { id:92, desc:'REFUND — Aer Cable Kit 3 (Rushfaster #269065, parcel undelivered, full refund)', amt:-137, cat:'gear', dest:'Pre-trip', date:'2026-07-03' },
+  { id:93, desc:'Aer Cable Kit 3 Organiser — replacement (Apple Store, order W1809050799; confirmed via Up card)', amt:99.95, cat:'gear', dest:'Pre-trip', date:'2026-07-02' }
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-06-v17';
+const COSTS_VERSION = '2026-07-06b-v17';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
@@ -3318,7 +3370,47 @@ function deleteCost(id) {
 
 function filterCost(cat){ costFilter = (cat && costFilter === cat) ? null : cat; renderCosts(); var el=document.getElementById('costList'); if(el && costFilter) el.scrollIntoView({behavior:'smooth',block:'start'}); }
 
+function renderLiveSpend() {
+  const el = document.getElementById('liveSpendCard');
+  if (!el || typeof liveSpend === 'undefined') return;
+  const ls = liveSpend;
+  const wiseSpent = ls.wise.reduce((s,w)=>s+w.spentAUD,0);
+  const wisePending = ls.wise.reduce((s,w)=>s+(w.pendingAUD||0),0);
+  const upSpent = (ls.up.cashAUD||0)+(ls.up.otherAUD||0);
+  const ground = wiseSpent + upSpent;
+  const perDay = ls.daysIn ? ground/ls.daysIn : 0;
+  const fmt = n => 'A$'+n.toLocaleString('en-AU',{minimumFractionDigits:0,maximumFractionDigits:0});
+  const legLabel = {THB:'Thailand leg', SGD:'Singapore leg'};
+  const rows = ls.wise.map(w=>{
+    const loaded=w.loadedAUD||0, used=w.spentAUD+(w.pendingAUD||0);
+    const pct=loaded? Math.min(100, Math.round(used/loaded*100)):0;
+    if(w.staged){
+      return `<div class="ls-row"><div class="cur">${w.flag} ${w.cur} <span style="font-size:9px;padding:1px 5px;border-radius:6px;background:#eef;color:#4338ca">staged</span></div>
+        <div class="ls-bar"><i style="width:2%;background:#c7c2ff"></i></div>
+        <div class="fig">${fmt(w.availAUD)} ready · ${legLabel[w.cur]||'later leg'}</div></div>`;
+    }
+    return `<div class="ls-row"><div class="cur">${w.flag} ${w.cur}</div>
+      <div class="ls-bar"><i style="width:${pct}%"></i></div>
+      <div class="fig">spent <b>${fmt(w.spentAUD)}</b> · left ${fmt(w.availAUD)}${w.pendingAUD?` · <span style="color:#b45309">${fmt(w.pendingAUD)} pending</span>`:''}</div></div>`;
+  }).join('');
+  const recent = (ls.recent||[]).map(t=>`<div class="ls-tx"><span class="m">${t.date} · ${t.merch}${t.local?` <span style="color:#aaa">(${t.local})</span>`:''}<span class="src ${t.src==='Up'?'up':''}">${t.src}</span></span><span class="a">A$${t.aud.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})}</span></div>`).join('');
+  el.innerHTML = `
+    <div class="ls-head">
+      <div class="ls-title"><span class="live-dot"></span>Live on-trip spending</div>
+      <div class="ls-upd">Wise + Up · updated ${ls.updated}</div>
+    </div>
+    <div class="ls-hero">
+      <div class="ls-hero-item"><div class="v">${fmt(ground)}</div><div class="l">Spent on the ground</div></div>
+      <div class="ls-hero-item"><div class="v">${fmt(perDay)}<span style="font-size:13px">/day</span></div><div class="l">Burn rate · ${ls.daysIn} days in</div></div>
+      <div class="ls-hero-item"><div class="v">${fmt(upSpent)}</div><div class="l">Up card abroad</div></div>
+    </div>
+    <div class="ls-rows">${rows}</div>
+    <div class="ls-recent">${recent}</div>
+    <div class="ls-note">Draws down the Wise balances you pre-loaded (already inside the committed total) plus direct Up card use abroad. Read-only — shown for visibility, not re-added to the total. Auth holds netted.</div>`;
+}
+
 function renderCosts() {
+  renderLiveSpend();
   const list = document.getElementById('costList');
   const total = costs.reduce((s, c) => s + c.amt, 0);
   const bycat = {};
