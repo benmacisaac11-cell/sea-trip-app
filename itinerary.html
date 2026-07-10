@@ -3309,11 +3309,14 @@ let costs = [
   { id:92, desc:'REFUND — Aer Cable Kit 3 (Rushfaster #269065, parcel undelivered, full refund)', amt:-137, cat:'gear', dest:'Pre-trip', date:'2026-07-03' },
   { id:93, desc:'Aer Cable Kit 3 Organiser — replacement (Apple Store, order W1809050799; confirmed via Up card)', amt:99.95, cat:'gear', dest:'Pre-trip', date:'2026-07-02' },
   // --- Auto-sweep 10 Jul 2026 ---
-  { id:94, desc:'REFUND — Chaco Z/Cloud sandal (Wild Earth #1001554410; refunded to CommBank, Ben-confirmed)', amt:-170.95, cat:'gear', dest:'Pre-trip', date:'2026-07-10' }
+  { id:94, desc:'REFUND — Chaco Z/Cloud sandal (Wild Earth #1001554410; refunded to CommBank, Ben-confirmed)', amt:-170.95, cat:'gear', dest:'Pre-trip', date:'2026-07-10' },
+  // --- Auto-sweep 11 Jul 2026 ---
+  { id:95, desc:'Wise — IDR reload (top-up 5,000,000 IDR, 10 Jul; est. AUD @ ~10,300 rate — confirm CommBank debit)', amt:485, cat:'other', dest:'Trip', date:'2026-07-10' },
+  { id:96, desc:'Split settle — Erin Kirker (shared meal/tour, via Up card)', amt:58, cat:'spending', dest:'Ubud', date:'2026-07-10' }
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-10-v18';
+const COSTS_VERSION = '2026-07-11-v19';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
