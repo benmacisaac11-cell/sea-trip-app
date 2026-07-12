@@ -3220,25 +3220,25 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-11';
+const LIVESPEND_VERSION = '2026-07-12';
 let liveSpend = {
-  updated: '2026-07-11',
-  daysIn: 8,
+  updated: '2026-07-12',
+  daysIn: 9,
   wise: [
-    { cur:'IDR', flag:'🇮🇩', loadedAUD:1392, spentAUD:1000, availAUD:392,   pendingAUD:0, availLocal:'5,000,000', staged:false },
-    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:157,  availAUD:343,   pendingAUD:0, availLocal:'7,973',    staged:false },
-    { cur:'SGD', flag:'🇸🇬', loadedAUD:300,  spentAUD:300,  availAUD:0,     pendingAUD:0, availLocal:'0',        staged:false }
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:1392, spentAUD:1392, availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false },
+    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:299,  availAUD:201,   pendingAUD:0, availLocal:'4,672', staged:false },
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:300,  spentAUD:300,  availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false }
   ],
-  up: { cashAUD:483.01, otherAUD:108.00, label:'Up card abroad (2× ATM cash-out + Amati Gianyar)' },
+  up: { cashAUD:660.39, otherAUD:108.00, label:'Up card abroad (4× ATM cash-out + fees + Amati Gianyar)' },
   recent: [
-    { date:'10 Jul', merch:'Ibu Susu Bar & Kitchen (Ubud)', local:'800,360 IDR', aud:62.80, src:'Wise' },
-    { date:'10 Jul', merch:'Hormesis Batik Attire (Ubud)', local:'750,000 IDR', aud:58.84, src:'Wise' },
-    { date:'9 Jul', merch:'Amati (Gianyar)', local:'—', aud:108.00, src:'Up' },
-    { date:'10 Jul', merch:'Folk Ho (Ubud)', local:'540,575 IDR', aud:42.41, src:'Wise' },
-    { date:'9 Jul', merch:'Satria Agrowisata (coffee plantation)', local:'545,900 IDR', aud:42.83, src:'Wise' },
-    { date:'8 Jul', merch:'Shore Amora — Canggu checkout', local:'2,125,030 IDR', aud:166.74, src:'Wise' },
-    { date:'8 Jul', merch:'Up · International ATM cash-out', local:'—', aud:240.83, src:'Up' },
-    { date:'8 Jul', merch:'Mason Adventure — white-water rafting', local:'995,000 IDR', aud:78.07, src:'Wise' }
+    { date:'11 Jul', merch:'Chupacabras — dinner (Ubud)', local:'2,857,300 IDR', aud:224.20, src:'Wise' },
+    { date:'12 Jul', merch:'Ur Spa (Ubud)', local:'598,900 IDR', aud:47.00, src:'Wise' },
+    { date:'11 Jul', merch:'Ur Spa (Gianyar)', local:'598,900 IDR', aud:47.00, src:'Wise' },
+    { date:'11 Jul', merch:'Apotekku — pharmacy (Ubud)', local:'408,042 IDR', aud:32.02, src:'Wise' },
+    { date:'11 Jul', merch:'Up · International ATM cash-out', local:'—', aud:82.12, src:'Up' },
+    { date:'12 Jul', merch:'Kimia Farma — pharmacy (Ubud)', local:'178,499 IDR', aud:14.01, src:'Wise' },
+    { date:'12 Jul', merch:'Mandala Suci Wenara (Monkey Forest)', local:'160,000 IDR', aud:12.55, src:'Wise' },
+    { date:'12 Jul', merch:'Grab rides (Ubud→Uluwatu day)', local:'74,200 IDR', aud:5.82, src:'Wise' }
   ]
 };
 
@@ -3349,11 +3349,13 @@ let costs = [
   { id:94, desc:'REFUND — Chaco Z/Cloud sandal (Wild Earth #1001554410; refunded to CommBank, Ben-confirmed)', amt:-170.95, cat:'gear', dest:'Pre-trip', date:'2026-07-10' },
   // --- Auto-sweep 11 Jul 2026 ---
   { id:95, desc:'Wise — IDR reload (top-up 5,000,000 IDR, 10 Jul; est. AUD @ ~10,300 rate — confirm CommBank debit)', amt:485, cat:'other', dest:'Trip', date:'2026-07-10' },
-  { id:96, desc:'Split settle — Erin Kirker (shared meal/tour, via Up card)', amt:58, cat:'spending', dest:'Ubud', date:'2026-07-10' }
+  { id:96, desc:'Split settle — Erin Kirker (shared meal/tour, via Up card)', amt:58, cat:'spending', dest:'Ubud', date:'2026-07-10' },
+  // --- Auto-sweep 12 Jul 2026 ---
+  { id:97, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days (order 91911249; confirmed via Up card)', amt:28.50, cat:'other', dest:'Ubud', date:'2026-07-10' }
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-11-v19';
+const COSTS_VERSION = '2026-07-12-v20';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
