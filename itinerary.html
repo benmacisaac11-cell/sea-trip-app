@@ -3224,25 +3224,25 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-12';
+const LIVESPEND_VERSION = '2026-07-14';
 let liveSpend = {
-  updated: '2026-07-12',
-  daysIn: 9,
+  updated: '2026-07-14',
+  daysIn: 11,
   wise: [
-    { cur:'IDR', flag:'🇮🇩', loadedAUD:1392, spentAUD:1392, availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false },
-    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:299,  availAUD:201,   pendingAUD:0, availLocal:'4,672', staged:false },
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:2625, spentAUD:2216, availAUD:409,   pendingAUD:0, availLocal:'5,102,706', staged:false },
+    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:328,  availAUD:172,   pendingAUD:0, availLocal:'3,961', staged:false },
     { cur:'SGD', flag:'🇸🇬', loadedAUD:300,  spentAUD:300,  availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false }
   ],
   up: { cashAUD:660.39, otherAUD:108.00, label:'Up card abroad (4× ATM cash-out + fees + Amati Gianyar)' },
   recent: [
-    { date:'11 Jul', merch:'Chupacabras — dinner (Ubud)', local:'2,857,300 IDR', aud:224.20, src:'Wise' },
-    { date:'12 Jul', merch:'Ur Spa (Ubud)', local:'598,900 IDR', aud:47.00, src:'Wise' },
-    { date:'11 Jul', merch:'Ur Spa (Gianyar)', local:'598,900 IDR', aud:47.00, src:'Wise' },
-    { date:'11 Jul', merch:'Apotekku — pharmacy (Ubud)', local:'408,042 IDR', aud:32.02, src:'Wise' },
-    { date:'11 Jul', merch:'Up · International ATM cash-out', local:'—', aud:82.12, src:'Up' },
-    { date:'12 Jul', merch:'Kimia Farma — pharmacy (Ubud)', local:'178,499 IDR', aud:14.01, src:'Wise' },
-    { date:'12 Jul', merch:'Mandala Suci Wenara (Monkey Forest)', local:'160,000 IDR', aud:12.55, src:'Wise' },
-    { date:'12 Jul', merch:'Grab rides (Ubud→Uluwatu day)', local:'74,200 IDR', aud:5.82, src:'Wise' }
+    { date:'13 Jul', merch:'ONAYA Bali — 2-night extension (injury delay)', local:'5,165,294 IDR', aud:413.80, src:'Wise' },
+    { date:'13 Jul', merch:'Terra Physio — home visit (ankle)', local:'850,000 IDR', aud:68.09, src:'Wise' },
+    { date:'13 Jul', merch:'Unicare Clinic — doctor consult (ankle)', local:'508,820 IDR', aud:40.76, src:'Wise' },
+    { date:'13 Jul', merch:'Apotek Indobat — pharmacy + ankle brace', local:'465,158 IDR', aud:37.26, src:'Wise' },
+    { date:'12 Jul', merch:'Artotel Haniman — Ubud checkout extras', local:'1,310,715 IDR', aud:104.99, src:'Wise' },
+    { date:'13 Jul', merch:'Hatch — café (Canggu/Badung)', local:'542,600 IDR', aud:43.47, src:'Wise' },
+    { date:'12 Jul', merch:'Ur Spa (Ubud)', local:'598,900 IDR', aud:47.98, src:'Wise' },
+    { date:'13 Jul', merch:'Unidentified merchant (Badung)', local:'1,500,000 IDR', aud:120.16, src:'Wise' }
   ]
 };
 
