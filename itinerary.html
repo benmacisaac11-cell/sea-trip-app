@@ -3355,11 +3355,13 @@ let costs = [
   { id:95, desc:'Wise — IDR reload (top-up 5,000,000 IDR, 10 Jul; est. AUD @ ~10,300 rate — confirm CommBank debit)', amt:485, cat:'other', dest:'Trip', date:'2026-07-10' },
   { id:96, desc:'Split settle — Erin Kirker (shared meal/tour, via Up card)', amt:58, cat:'spending', dest:'Ubud', date:'2026-07-10' },
   // --- Auto-sweep 12 Jul 2026 ---
-  { id:97, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days (order 91911249; confirmed via Up card)', amt:28.50, cat:'other', dest:'Ubud', date:'2026-07-10' }
+  { id:97, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days (order 91911249; confirmed via Up card)', amt:28.50, cat:'other', dest:'Ubud', date:'2026-07-10' },
+  // --- Auto-sweep 15 Jul 2026 (Ben-confirmed: paid from CommBank card, add as travel expense) ---
+  { id:98, desc:'Wise — IDR top-ups ×3 (3M+3M+8M = 14,000,000 IDR, 12–13 Jul injury week; est. AUD @ mid-market — confirm exact CommBank debit)', amt:1140, cat:'other', dest:'Trip', date:'2026-07-13' }
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-12-v20';
+const COSTS_VERSION = '2026-07-15-v21';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
