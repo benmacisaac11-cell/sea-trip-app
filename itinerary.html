@@ -3224,32 +3224,31 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-15';
+const LIVESPEND_VERSION = '2026-07-15b';
 let liveSpend = {
   updated: '2026-07-15',
   daysIn: 12,
   wise: [
-    { cur:'IDR', flag:'🇮🇩', loadedAUD:2625, spentAUD:2508, availAUD:117,   pendingAUD:0, availLocal:'1,453,606', staged:false },
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2777, availAUD:90,    pendingAUD:0, availLocal:'1,115,337', staged:false },
     { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:328,  availAUD:172,   pendingAUD:0, availLocal:'3,961', staged:false },
     { cur:'SGD', flag:'🇸🇬', loadedAUD:300,  spentAUD:300,  availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false }
   ],
   up: { cashAUD:660.39, otherAUD:108.00, label:'Up card abroad (4× ATM cash-out + fees + Amati Gianyar)' },
   recent: [
-    { date:'14 Jul', merch:'Sundays Beach Club — VIP Sand Deck (booking 15 Jul)', local:'3,000,000 IDR', aud:244.50, src:'Wise' },
+    { date:'15 Jul', merch:'Unicare Klinik Badung — ankle follow-up (imaging/review)', local:'3,248,620 IDR', aud:260.00, src:'Wise' },
+    { date:'14 Jul', merch:'Sundays Beach Club — VIP Sand Deck', local:'3,000,000 IDR', aud:244.50, src:'Wise' },
     { date:'13 Jul', merch:'ONAYA Bali — 2-night extension (injury delay)', local:'5,165,294 IDR', aud:413.80, src:'Wise' },
     { date:'13 Jul', merch:'Terra Physio — home visit (ankle)', local:'850,000 IDR', aud:68.09, src:'Wise' },
-    { date:'14 Jul', merch:'Ulufit Bali (Uluwatu)', local:'250,000 IDR', aud:20.37, src:'Wise' },
     { date:'13 Jul', merch:'Unicare Clinic — doctor consult (ankle)', local:'508,820 IDR', aud:40.76, src:'Wise' },
-    { date:'14 Jul', merch:'GWK Cultural Park — tickets (Uluwatu)', local:'190,000 IDR', aud:15.48, src:'Wise' },
-    { date:'14 Jul', merch:'Zahra Spa (Uluwatu)', local:'180,000 IDR', aud:14.67, src:'Wise' },
-    { date:'13 Jul', merch:'Unidentified merchant (Badung)', local:'1,500,000 IDR', aud:120.16, src:'Wise' }
+    { date:'14 Jul', merch:'Ulufit Bali (Uluwatu)', local:'250,000 IDR', aud:20.37, src:'Wise' },
+    { date:'15 Jul', merch:'The Ungasan Clifftop — farewell', local:'44,549 IDR', aud:3.59, src:'Wise' }
   ]
 };
 
 let costs = [
   // Flights
   { id:1, desc:'JQ43 MEL→DPS (Jetstar · ••••••)', amt:899.03, cat:'flights', dest:'Canggu', date:'2026-05-26' },
-  { id:2, desc:'Scoot TR281 (was TR289, changed 13 Jul) DPS→SIN (••••••)', amt:0, cat:'flights', dest:'Singapore', date:'2026-05-27' },
+  { id:2, desc:'Scoot TR281 (was TR289) DPS→SIN — change cost, CommBank (••••••)', amt:236.46, cat:'flights', dest:'Singapore', date:'2026-07-13' },
   { id:3, desc:'Singapore Airlines SQ726 SIN→Phuket (••••••)', amt:263.42, cat:'flights', dest:'Phuket', date:'2026-05-28' },
   { id:4, desc:'Scoot TR649/TR58 USM→SIN→MEL home (••••••)', amt:1122.93, cat:'flights', dest:'Koh Phangan', date:'2026-05-28' },
   // Hotels
@@ -3361,7 +3360,7 @@ let costs = [
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-15-v21';
+const COSTS_VERSION = '2026-07-16-scootchange';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
