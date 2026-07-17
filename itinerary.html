@@ -3225,24 +3225,24 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-15b';
+const LIVESPEND_VERSION = '2026-07-17';
 let liveSpend = {
-  updated: '2026-07-15',
-  daysIn: 12,
+  updated: '2026-07-17',
+  daysIn: 14,
   wise: [
-    { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2777, availAUD:90,    pendingAUD:0, availLocal:'1,115,337', staged:false },
-    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:328,  availAUD:172,   pendingAUD:0, availLocal:'3,961', staged:false },
-    { cur:'SGD', flag:'🇸🇬', loadedAUD:300,  spentAUD:300,  availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false }
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:934,  availAUD:289,   pendingAUD:0, availLocal:'248',   staged:false },
+    { cur:'THB', flag:'🇹🇭', loadedAUD:500,  spentAUD:404,  availAUD:96,    pendingAUD:0, availLocal:'2,212', staged:false },
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false }
   ],
-  up: { cashAUD:660.39, otherAUD:108.00, label:'Up card abroad (4× ATM cash-out + fees + Amati Gianyar)' },
+  up: { cashAUD:660.39, otherAUD:116.90, label:'Up card abroad (4× ATM cash-out + fees + Amati Gianyar + Scoot SGD ancillary)' },
   recent: [
-    { date:'15 Jul', merch:'Unicare Klinik Badung — ankle follow-up (imaging/review)', local:'3,248,620 IDR', aud:260.00, src:'Wise' },
-    { date:'14 Jul', merch:'Sundays Beach Club — VIP Sand Deck', local:'3,000,000 IDR', aud:244.50, src:'Wise' },
-    { date:'13 Jul', merch:'ONAYA Bali — 2-night extension (injury delay)', local:'5,165,294 IDR', aud:413.80, src:'Wise' },
-    { date:'13 Jul', merch:'Terra Physio — home visit (ankle)', local:'850,000 IDR', aud:68.09, src:'Wise' },
-    { date:'13 Jul', merch:'Unicare Clinic — doctor consult (ankle)', local:'508,820 IDR', aud:40.76, src:'Wise' },
-    { date:'14 Jul', merch:'Ulufit Bali (Uluwatu)', local:'250,000 IDR', aud:20.37, src:'Wise' },
-    { date:'15 Jul', merch:'The Ungasan Clifftop — farewell', local:'44,549 IDR', aud:3.59, src:'Wise' }
+    { date:'16 Jul', merch:'Heritage Collection SG — hotel incidental', local:'200.00 SGD', aud:233.00, src:'Wise' },
+    { date:'16 Jul', merch:'ATLAS Bar (w/ Erin + bro)', local:'106.71 SGD', aud:124.32, src:'Wise' },
+    { date:'17 Jul', merch:'Gardens by the Bay — tickets', local:'46.00 SGD', aud:53.59, src:'Wise' },
+    { date:'16 Jul', merch:'Watsons — Chinatown', local:'55.50 SGD', aud:64.66, src:'Wise' },
+    { date:'17 Jul', merch:'Ce La Vi (Marina Bay Sands)', local:'38.00 SGD', aud:44.27, src:'Wise' },
+    { date:'15 Jul', merch:'Unicare Klinik — gastro IV treatment (claim 2)', local:'3,248,620 IDR', aud:260.00, src:'Wise' },
+    { date:'17 Jul', merch:'Shaw Theatres Lido — The Odyssey', local:'27.00 SGD', aud:31.46, src:'Wise' }
   ]
 };
 
@@ -3357,11 +3357,13 @@ let costs = [
   // --- Auto-sweep 12 Jul 2026 ---
   { id:97, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days (order 91911249; confirmed via Up card)', amt:28.50, cat:'other', dest:'Ubud', date:'2026-07-10' },
   // --- Auto-sweep 15 Jul 2026 (Ben-confirmed: paid from CommBank card, add as travel expense) ---
-  { id:98, desc:'Wise — IDR top-ups ×3 (3M+3M+8M = 14,000,000 IDR, 12–13 Jul injury week; est. AUD @ mid-market — confirm exact CommBank debit)', amt:1140, cat:'other', dest:'Trip', date:'2026-07-13' }
+  { id:98, desc:'Wise — IDR top-ups ×3 (3M+3M+8M = 14,000,000 IDR, 12–13 Jul injury week; est. AUD @ mid-market — confirm exact CommBank debit)', amt:1140, cat:'other', dest:'Trip', date:'2026-07-13' },
+  // --- Auto-sweep 17 Jul 2026 ---
+  { id:99, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days renewal (Apple Pay via Up card, order 16 Jul; settled −$28.00)', amt:28.00, cat:'other', dest:'Trip', date:'2026-07-16' }
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-16-scootchange';
+const COSTS_VERSION = '2026-07-17-v22';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
