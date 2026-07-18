@@ -3359,11 +3359,14 @@ let costs = [
   // --- Auto-sweep 15 Jul 2026 (Ben-confirmed: paid from CommBank card, add as travel expense) ---
   { id:98, desc:'Wise — IDR top-ups ×3 (3M+3M+8M = 14,000,000 IDR, 12–13 Jul injury week; est. AUD @ mid-market — confirm exact CommBank debit)', amt:1140, cat:'other', dest:'Trip', date:'2026-07-13' },
   // --- Auto-sweep 17 Jul 2026 ---
-  { id:99, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days renewal (Apple Pay via Up card, order 16 Jul; settled −$28.00)', amt:28.00, cat:'other', dest:'Trip', date:'2026-07-16' }
+  { id:99, desc:'Airalo eSIM top-up — Indonesia 10 GB / 7 days renewal (Apple Pay via Up card, order 16 Jul; settled −$28.00)', amt:28.00, cat:'other', dest:'Trip', date:'2026-07-16' },
+  // --- Estimated CommBank→Wise top-ups (Ben 18 Jul: "just do AUD estimates if you can't find exact") ---
+  { id:100, desc:'Wise — SGD top-ups ×3 (500+250+300 = 1,050 SGD, 16–17 Jul, Singapore leg; est. AUD @ ~1.165 mid-market — confirm exact CommBank debit)', amt:1223, cat:'other', dest:'Singapore', date:'2026-07-16' },
+  { id:101, desc:'Wise — IDR top-up (3,000,000 IDR, 15 Jul final Bali day; est. AUD @ ~12,300 mid-market — confirm exact CommBank debit)', amt:244, cat:'other', dest:'Trip', date:'2026-07-15' }
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-17-v22';
+const COSTS_VERSION = '2026-07-18-v23';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
