@@ -3312,24 +3312,24 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-21';
+const LIVESPEND_VERSION = '2026-07-24';
 let liveSpend = {
-  updated: '2026-07-21',
-  daysIn: 17,
+  updated: '2026-07-24',
+  daysIn: 20,
   wise: [
-    { cur:'THB', flag:'🇹🇭', loadedAUD:1536, spentAUD:1227, availAUD:309,   pendingAUD:0, availLocal:'7,194', staged:false },
-    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1007, availAUD:216,   pendingAUD:0, availLocal:'186',   staged:false },
-    { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',     staged:false }
+    { cur:'THB', flag:'🇹🇭', loadedAUD:3243, spentAUD:3243, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false },
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1180, availAUD:43,    pendingAUD:0, availLocal:'37',  staged:false },
+    { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false }
   ],
-  up: { cashAUD:660.39, otherAUD:116.90, label:'Up card abroad (4× ATM cash-out + fees + Amati Gianyar + Scoot SGD ancillary)' },
+  up: { cashAUD:660.39, otherAUD:955.84, label:'Up card abroad (4× ATM cash-out + fees + Amati + Jim Thompson silk + Samui Home Clinic + Scoot ancillary)' },
   recent: [
-    { date:'19 Jul', merch:'Krung Thai Bank — ATM cash-out (Phuket)', local:'10,350 THB', aud:445.00, src:'Wise' },
-    { date:'18 Jul', merch:'Stay Phuket — resort', local:'3,000 THB', aud:128.98, src:'Wise' },
-    { date:'19 Jul', merch:'Stay Phuket — resort', local:'2,145.77 THB', aud:92.25, src:'Wise' },
-    { date:'21 Jul', merch:'500 Rai Float Resort (Khao Sok)', local:'1,374.08 THB', aud:59.07, src:'Wise' },
-    { date:'18 Jul', merch:'The Nai Harn — Phuket', local:'1,120 THB', aud:48.15, src:'Wise' },
-    { date:'21 Jul', merch:'Lomprayah — Koh Samui ferry', local:'450 THB', aud:19.35, src:'Wise' },
-    { date:'18 Jul', merch:'Ce La Vi (Marina Bay Sands, SG close-out)', local:'38.00 SGD', aud:44.27, src:'Wise' }
+    { date:'22 Jul', merch:'Samui Pier Resort — Koh Samui', local:'30,350 THB', aud:1295.50, src:'Wise' },
+    { date:'23 Jul', merch:'Jim Thompson — Thai silk (Suratthani)', local:'card in THB', aud:515.62, src:'Up' },
+    { date:'22 Jul', merch:'Samui Home Clinic — accident care', local:'card in THB', aud:259.42, src:'Up' },
+    { date:'24 Jul', merch:'100 Degrees East — Angthong tour', local:'2,725 THB', aud:116.30, src:'Wise' },
+    { date:'24 Jul', merch:'Saii Koh Samui Villas', local:'1,500 THB', aud:64.00, src:'Wise' },
+    { date:'22 Jul', merch:'Morya Pharmacy (Samui)', local:'897 THB', aud:38.30, src:'Wise' },
+    { date:'22 Jul', merch:'Uniqlo — Central Festival Samui', local:'880 THB', aud:37.60, src:'Wise' }
   ]
 };
 
@@ -3453,10 +3453,12 @@ let costs = [
   // --- Auto-sweep 21 Jul 2026 (exact AUD from Up card, no estimate) ---
   { id:102, desc:'Wise — THB top-up (20,000 THB, 18 Jul Thailand leg; funded via Up card −$859.94)', amt:859.94, cat:'other', dest:'Thailand', date:'2026-07-18' },
       { id:103, desc:'Muay Thai Super Fight — VIP/ringside ticket, Phetchbuncha (GlobalTix)', amt:83.00, cat:'activities', dest:'Koh Samui', date:'2026-07-22' },
+  // --- Auto-sweep 24 Jul 2026 (exact AUD from Up card, no estimate) ---
+  { id:104, desc:'Wise — THB top-up (40,000 THB, 22 Jul Koh Samui; funded via Up card −$1,706.75)', amt:1706.75, cat:'other', dest:'Thailand', date:'2026-07-22' },
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-21-v24';
+const COSTS_VERSION = '2026-07-24-v25';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
