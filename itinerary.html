@@ -3311,19 +3311,19 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-25';
+const LIVESPEND_VERSION = '2026-07-26';
 let liveSpend = {
-  updated: '2026-07-25',
-  daysIn: 21,
+  updated: '2026-07-26',
+  daysIn: 22,
   wise: [
     { cur:'THB', flag:'🇹🇭', loadedAUD:3243, spentAUD:3243, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false },
-    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1207, availAUD:16,    pendingAUD:0, availLocal:'14',  staged:false },
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1213, availAUD:10,    pendingAUD:0, availLocal:'9',   staged:false },
     { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false }
   ],
   up: { cashAUD:660.39, otherAUD:1020.89, label:'Up card abroad (4× ATM cash-out + fees + Amati + Jim Thompson silk + Samui Home Clinic + massage + resort bar + Scoot ancillary)' },
   recent: [
     { date:'25 Jul', merch:'Body & Soul Health Massage (Choeng Mon)', local:'945 THB', aud:40.40, src:'Up' },
-    { date:'25 Jul', merch:'Grab rides — Samui', local:'606 THB', aud:27.13, src:'Wise' },
+    { date:'25 Jul', merch:'Grab rides — Samui (×7)', local:'734 THB', aud:32.97, src:'Wise' },
     { date:'25 Jul', merch:'Anantara Lawana — Koh Samui', local:'577 THB', aud:24.65, src:'Up' },
     { date:'24 Jul', merch:'100 Degrees East — Angthong deposit', local:'2,725 THB', aud:116.30, src:'Wise' },
     { date:'24 Jul', merch:'Saii Koh Samui Villas', local:'1,500 THB', aud:64.00, src:'Wise' },
@@ -3457,10 +3457,11 @@ let costs = [
   // --- Auto-sweep 25 Jul 2026 (Up card, exact AUD, Gmail receipts) ---
   { id:105, desc:'Zipline — Hawk Adventure "Gold Hawk" (Viator booking 1427689543, Mon 27 Jul 13:00, pickup Sea Dance)', amt:117.58, cat:'activities', dest:'Koh Samui', date:'2026-07-25' },
   { id:106, desc:'ATV tour 2 hr, Samui (Lexi / Trip Tour Thailand, ฿2,884 incl. 3% card fee; Up card)', amt:127.96, cat:'activities', dest:'Koh Samui', date:'2026-07-25' },
+  { id:107, desc:'Angthong Marine Park tour — 100 Degrees East, balance on the day (฿2,806 incl. card fee; Up card — deposit ฿2,725 already inside the THB top-ups)', amt:119.95, cat:'activities', dest:'Koh Samui', date:'2026-07-26' },
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-25-v26';
+const COSTS_VERSION = '2026-07-26-v27';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
