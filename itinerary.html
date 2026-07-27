@@ -3315,22 +3315,22 @@ const CAT_LABELS = {
 // shown for live visibility, NOT re-added to the committed total.
 const LIVESPEND_VERSION = '2026-07-26';
 let liveSpend = {
-  updated: '2026-07-26',
-  daysIn: 22,
+  updated: '2026-07-27',
+  daysIn: 23,
   wise: [
     { cur:'THB', flag:'🇹🇭', loadedAUD:3243, spentAUD:3243, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false },
-    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1213, availAUD:10,    pendingAUD:0, availLocal:'9',   staged:false },
+    { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1214, availAUD:9,     pendingAUD:0, availLocal:'7',   staged:false },
     { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false }
   ],
-  up: { cashAUD:660.39, otherAUD:1020.89, label:'Up card abroad (4× ATM cash-out + fees + Amati + Jim Thompson silk + Samui Home Clinic + massage + resort bar + Scoot ancillary)' },
+  up: { cashAUD:660.39, otherAUD:2345.39, label:'Up card abroad (4× ATM cash-out + fees + Jim Thompson silk + Samui Home Clinic + Sea Dance checkout + Power Buy AirPods + thank-you gifts + Varivana + Grabs/gym/pharmacy)' },
   recent: [
-    { date:'25 Jul', merch:'Body & Soul Health Massage (Choeng Mon)', local:'945 THB', aud:40.40, src:'Up' },
-    { date:'25 Jul', merch:'Grab rides — Samui (×7)', local:'734 THB', aud:32.97, src:'Wise' },
-    { date:'25 Jul', merch:'Anantara Lawana — Koh Samui', local:'577 THB', aud:24.65, src:'Up' },
-    { date:'24 Jul', merch:'100 Degrees East — Angthong deposit', local:'2,725 THB', aud:116.30, src:'Wise' },
-    { date:'24 Jul', merch:'Saii Koh Samui Villas', local:'1,500 THB', aud:64.00, src:'Wise' },
-    { date:'24 Jul', merch:'Bondi Aussie Bar & Grill (Samui)', local:'1,000 THB', aud:44.76, src:'Wise' },
-    { date:'23 Jul', merch:'Kapi Sator Cocktail Bar (Samui)', local:'906 THB', aud:38.68, src:'Wise' }
+    { date:'27 Jul', merch:'Sea Dance Resort — checkout bill (Samui)', local:'11,970 THB', aud:511.70, src:'Up' },
+    { date:'27 Jul', merch:'Power Buy — Central Festival Samui (AirPods)', local:'7,590 THB', aud:324.46, src:'Up' },
+    { date:'27 Jul', merch:'Flowers by Jack — 5 thank-you gift deliveries', local:'6,000 THB', aud:256.49, src:'Up' },
+    { date:'27 Jul', merch:'Varivana Resort — Koh Phangan (on arrival)', local:'3,000 THB', aud:128.25, src:'Up' },
+    { date:'27 Jul', merch:'Grab rides — Samui/Phangan (×4)', local:'1,225 THB', aud:52.36, src:'Up' },
+    { date:'27 Jul', merch:'Legacy Muscle University gym (×2)', local:'639 THB', aud:27.30, src:'Up' },
+    { date:'27 Jul', merch:'Watsons Central Samui', local:'560 THB', aud:23.94, src:'Up' }
   ]
 };
 
@@ -3460,10 +3460,12 @@ let costs = [
   { id:105, desc:'Zipline — Hawk Adventure "Gold Hawk" (Viator booking 1427689543, Mon 27 Jul 13:00, pickup Sea Dance)', amt:117.58, cat:'activities', dest:'Koh Samui', date:'2026-07-25' },
   { id:106, desc:'ATV tour 2 hr, Samui (Lexi / Trip Tour Thailand, ฿2,884 incl. 3% card fee; Up card)', amt:127.96, cat:'activities', dest:'Koh Samui', date:'2026-07-25' },
   { id:107, desc:'Angthong Marine Park tour — 100 Degrees East, balance on the day (฿2,806 incl. card fee; Up card — deposit ฿2,725 already inside the THB top-ups)', amt:119.95, cat:'activities', dest:'Koh Samui', date:'2026-07-26' },
+  // --- Auto-sweep 27 Jul 2026 (Up card, exact AUD, Stripe receipt) ---
+  { id:108, desc:'Muay Thai — MOON FIGHT, Koh Phangan Stadium (ACB Tickets #1831-6368, ฿1,200; rescheduled to Thu 30 Jul 21:00, same ticket valid)', amt:51.30, cat:'activities', dest:'Koh Phangan', date:'2026-07-27' },
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-26-v27';
+const COSTS_VERSION = '2026-07-27-v28';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
