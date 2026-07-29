@@ -3301,24 +3301,24 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-28';
+const LIVESPEND_VERSION = '2026-07-29';
 let liveSpend = {
-  updated: '2026-07-28',
-  daysIn: 24,
+  updated: '2026-07-29',
+  daysIn: 25,
   wise: [
     { cur:'THB', flag:'🇹🇭', loadedAUD:3243, spentAUD:3243, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false },
     { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1214, availAUD:9,     pendingAUD:0, availLocal:'7',   staged:false },
     { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false }
   ],
-  up: { cashAUD:1604.32, otherAUD:2648.51, label:'Up card abroad (5× ATM cash-out + fees — incl. the 28 Jul withdrawal for the car-hire deposit — plus Jim Thompson silk, Samui Home Clinic, First Western Hospital, Sea Dance checkout, Power Buy AirPods, thank-you gifts, Varivana, Grabs/gym/pharmacy/cafés)' },
+  up: { cashAUD:1604.32, otherAUD:2847.67, label:'Up card abroad (5× ATM cash-out + fees — incl. the 28 Jul withdrawal for the car-hire deposit — plus First Western Hospital ×2, Jim Thompson silk, Samui Home Clinic, Sea Dance checkout, Power Buy AirPods, thank-you gifts, Varivana, Grabs/gym/pharmacy/cafés)' },
   recent: [
     { date:'28 Jul', merch:'ATM cash withdrawal — Koh Phangan (incl. fee; funded the car-hire deposit)', local:'cash', aud:943.93, src:'Up' },
     { date:'27 Jul', merch:'Sea Dance Resort — checkout bill (Samui)', local:'11,970 THB', aud:511.70, src:'Up' },
     { date:'27 Jul', merch:'Power Buy — Central Festival Samui (AirPods)', local:'7,590 THB', aud:324.46, src:'Up' },
     { date:'28 Jul', merch:'First Western Hospital — Koh Phangan', local:'6,000 THB', aud:256.45, src:'Up' },
     { date:'27 Jul', merch:'Flowers by Jack — 5 thank-you gift deliveries', local:'6,000 THB', aud:256.49, src:'Up' },
-    { date:'27 Jul', merch:'Varivana Resort — Koh Phangan (on arrival)', local:'3,000 THB', aud:128.25, src:'Up' },
-    { date:'28 Jul', merch:'Kanda Shop — Koh Phangan', local:'772 THB', aud:33.02, src:'Up' }
+    { date:'29 Jul', merch:'First Western Hospital — Koh Phangan (2nd visit)', local:'4,636 THB', aud:199.16, src:'Up' },
+    { date:'27 Jul', merch:'Varivana Resort — Koh Phangan (on arrival)', local:'3,000 THB', aud:128.25, src:'Up' }
   ]
 };
 
@@ -3451,10 +3451,13 @@ let costs = [
   // --- Auto-sweep 27 Jul 2026 (Up card, exact AUD, Stripe receipt) ---
   { id:108, desc:'Muay Thai — MOON FIGHT, Koh Phangan Stadium (ACB Tickets #1831-6368, ฿1,200; rescheduled to Thu 30 Jul 21:00, same ticket valid)', amt:51.30, cat:'activities', dest:'Koh Phangan', date:'2026-07-27' },
   { id:109, desc:'REFUND — Zipline, Hawk Adventure "Gold Hawk" (Viator BR-1427689543, cancelled on medical grounds; full refund confirmed processed 27 Jul, 3–7 days to land)', amt:-117.58, cat:'activities', dest:'Koh Samui', date:'2026-07-27' },
+  // --- Auto-sweep 29 Jul 2026 ---
+  { id:110, desc:'Airalo eSIM top-up — Thailand 10 GB / 7 days (order 93971151, Up card)', amt:15.00, cat:'other', dest:'Koh Phangan', date:'2026-07-29' },
+  { id:111, desc:'REFUND — Cover-More travel insurance payout, claim 1777613 (medical $112.02 + additional expenses $164.00 after $250 excess + cancellation $236.46; paid to nominated account 29 Jul)', amt:-512.48, cat:'other', dest:'Trip', date:'2026-07-29' },
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-27-v29';
+const COSTS_VERSION = '2026-07-29-v30';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
