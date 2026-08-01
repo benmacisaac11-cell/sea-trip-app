@@ -3301,24 +3301,24 @@ const CAT_LABELS = {
 // Auto-refreshed by the daily sweep from Wise + Up (read-only APIs).
 // This is BURN-DOWN of money already loaded/counted in the committed total —
 // shown for live visibility, NOT re-added to the committed total.
-const LIVESPEND_VERSION = '2026-07-29';
+const LIVESPEND_VERSION = '2026-08-01';
 let liveSpend = {
-  updated: '2026-07-29',
-  daysIn: 25,
+  updated: '2026-08-01',
+  daysIn: 28,
   wise: [
     { cur:'THB', flag:'🇹🇭', loadedAUD:3243, spentAUD:3243, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false },
     { cur:'SGD', flag:'🇸🇬', loadedAUD:1223, spentAUD:1214, availAUD:9,     pendingAUD:0, availLocal:'7',   staged:false },
     { cur:'IDR', flag:'🇮🇩', loadedAUD:2867, spentAUD:2867, availAUD:0,     pendingAUD:0, availLocal:'0',   staged:false }
   ],
-  up: { cashAUD:1604.32, otherAUD:2847.67, label:'Up card abroad (5× ATM cash-out + fees — incl. the 28 Jul withdrawal for the car-hire deposit — plus First Western Hospital ×2, Jim Thompson silk, Samui Home Clinic, Sea Dance checkout, Power Buy AirPods, thank-you gifts, Varivana, Grabs/gym/pharmacy/cafés)' },
+  up: { cashAUD:1851.80, otherAUD:3307.46, label:'Up card abroad (6× ATM cash-out + fees — incl. the 28 Jul withdrawal for the car-hire deposit — plus First Western Hospital ×4, Jim Thompson silk, Samui Home Clinic, Sea Dance checkout, Power Buy AirPods, thank-you gifts, Varivana, bars/Grabs/gym/pharmacy/cafés)' },
   recent: [
-    { date:'28 Jul', merch:'ATM cash withdrawal — Koh Phangan (incl. fee; funded the car-hire deposit)', local:'cash', aud:943.93, src:'Up' },
-    { date:'27 Jul', merch:'Sea Dance Resort — checkout bill (Samui)', local:'11,970 THB', aud:511.70, src:'Up' },
-    { date:'27 Jul', merch:'Power Buy — Central Festival Samui (AirPods)', local:'7,590 THB', aud:324.46, src:'Up' },
-    { date:'28 Jul', merch:'First Western Hospital — Koh Phangan', local:'6,000 THB', aud:256.45, src:'Up' },
-    { date:'27 Jul', merch:'Flowers by Jack — 5 thank-you gift deliveries', local:'6,000 THB', aud:256.49, src:'Up' },
+    { date:'31 Jul', merch:'ATM cash withdrawal — Koh Phangan (incl. fee)', local:'cash', aud:247.48, src:'Up' },
     { date:'29 Jul', merch:'First Western Hospital — Koh Phangan (2nd visit)', local:'4,636 THB', aud:199.16, src:'Up' },
-    { date:'27 Jul', merch:'Varivana Resort — Koh Phangan (on arrival)', local:'3,000 THB', aud:128.25, src:'Up' }
+    { date:'30 Jul', merch:'First Western Hospital — Koh Phangan (3rd visit)', local:'4,496 THB', aud:194.32, src:'Up' },
+    { date:'31 Jul', merch:'First Western Hospital — Koh Phangan (4th visit)', local:'4,070 THB', aud:176.41, src:'Up' },
+    { date:'31 Jul', merch:'Amstardam Bar — Koh Phangan (3 charges, Full Moon night)', local:'1,596 THB', aud:69.18, src:'Up' },
+    { date:'1 Aug', merch:'7-Eleven — Koh Phangan', local:'236 THB', aud:10.14, src:'Up' },
+    { date:'1 Aug', merch:'Noi Shop', local:'227 THB', aud:9.74, src:'Up' }
   ]
 };
 
@@ -3454,10 +3454,14 @@ let costs = [
   // --- Auto-sweep 29 Jul 2026 ---
   { id:110, desc:'Airalo eSIM top-up — Thailand 10 GB / 7 days (order 93971151, Up card)', amt:15.00, cat:'other', dest:'Koh Phangan', date:'2026-07-29' },
   { id:111, desc:'REFUND — Cover-More travel insurance payout, claim 1777613 (medical $112.02 + additional expenses $164.00 after $250 excess + cancellation $236.46; paid to nominated account 29 Jul)', amt:-512.48, cat:'other', dest:'Trip', date:'2026-07-29' },
+  // --- Auto-sweep 1 Aug 2026 (Up card, exact AUD, Gmail receipts) ---
+  { id:112, desc:'Padel court hire — RTF Padel Club, Koh Phangan (Playtomic booking, ฿600, Pink court 13:30–14:30; Up card)', amt:25.93, cat:'activities', dest:'Koh Phangan', date:'2026-07-30' },
+  { id:113, desc:'Airalo eSIM — Thailand 50 GB / 100 min / 10 days (order 94155564, Up card)', amt:14.50, cat:'other', dest:'Koh Phangan', date:'2026-07-31' },
+  { id:114, desc:'Ferry — Koh Phangan (Baan Tai) to Koh Samui (Petcharat), speedboat (Thailand Ferry Booking B690143845, ฿500.25 incl. service fee; Up card)', amt:21.68, cat:'transport', dest:'Koh Phangan', date:'2026-07-31' },
 ];
 let costFilter = null;
 
-const COSTS_VERSION = '2026-07-29-v30';
+const COSTS_VERSION = '2026-08-01-v31';
 function saveCosts() {
   try {
     window.storage && window.storage.set('sea_trip_costs', JSON.stringify(costs));
